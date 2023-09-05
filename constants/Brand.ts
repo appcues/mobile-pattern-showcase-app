@@ -1,7 +1,38 @@
+export const color = {
+  neutral900: '#0B1A38',
+};
+
 export const gradient = {
   blurpleHaze: ['#5C5CFF', '#8960FF'],
   moodLighting: ['#5C5CFF', '#8AD5FF'],
   galaxy: ['#5C5CFF', '#FF92C6'],
   tropico: ['#8960FF', '#FF5290'],
   babyHaze: ['#DDDDFD', '#CFEEFF'],
+};
+
+export const shadows = {
+  elevation100: {
+    shadowColor: color.neutral900,
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+  },
+  elevation200: {
+    shadowColor: color.neutral900,
+    shadowOpacity: 0.16,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 16,
+  },
+  elevation300: {
+    shadowColor: color.neutral900,
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 12 },
+    shadowRadius: 34,
+  },
+  elevation400: {
+    shadowColor: color.neutral900,
+    shadowOpacity: 0.35,
+    shadowOffset: { width: 0, height: 12 },
+    shadowRadius: 34,
+  },
 };
