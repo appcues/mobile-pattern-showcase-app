@@ -4,14 +4,15 @@ import { useAuth } from '../../context/auth';
 import PrimaryButton from '../../components/PrimaryButton';
 import OutlinedTextInput from '../../components/OutlinedTextInput';
 import Logo from "../../assets/images/logo.svg";
-
+import { LinearGradient } from 'expo-linear-gradient';
+import { gradient } from '../../constants/Brand'
 
 export default function SignIn() {
   const { signIn } = useAuth();
   const [ emailAddress, onChangeEmailAddress ] = useState('');
 
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={gradient.babyHaze} style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.contentBox}>
           <Logo width="145" height="30" style={{alignSelf: 'center'}} />
@@ -27,7 +28,7 @@ export default function SignIn() {
           />
         </View>
       </KeyboardAvoidingView>
-    </View>
+    </LinearGradient>
   );
 }
 
