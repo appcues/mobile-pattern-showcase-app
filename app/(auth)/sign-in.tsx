@@ -4,17 +4,20 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
-  Text,
   View,
+  useColorScheme,
 } from 'react-native';
 
 import Logo from '../../assets/images/logo.svg';
+import { Rays, Waves } from '../../components/Decoration';
 import OutlinedTextInput from '../../components/OutlinedTextInput';
 import PrimaryButton from '../../components/PrimaryButton';
-import { gradient, shadows } from '../../constants/Brand';
+import { Text } from '../../components/Themed';
+import { color, gradient, shadow } from '../../constants/Brand';
 import { useAuth } from '../../context/auth';
 
 export default function SignIn() {
+  const colorScheme = useColorScheme();
   const { signIn } = useAuth();
   const [emailAddress, onChangeEmailAddress] = useState('');
   const [canShowError, setCanShowError] = useState(false);
@@ -32,35 +35,56 @@ export default function SignIn() {
   }
 
   return (
-    <LinearGradient colors={gradient.babyHaze} style={styles.container}>
+    <LinearGradient
+      colors={colorScheme === 'light' ? gradient.babyHaze : gradient.regulus}
+      style={styles.container}
+    >
       <LinearGradient
-        colors={gradient.moodLighting}
+        colors={
+          colorScheme === 'light' ? gradient.moodLighting : gradient.regulus
+        }
         style={styles.backdropDecoration}
       />
-      <Logo width="145" height="30" style={{ marginBottom: 20 }} />
+      <Logo
+        width="145"
+        height="30"
+        fill={colorScheme === 'light' ? '#242a35' : '#ffffff'}
+        style={{ marginBottom: 20 }}
+      />
+      <Waves scale={0.5} style={styles.waves} />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-        <View style={styles.contentBox}>
-          <Text style={styles.title}>Mobile Pattern Showcase</Text>
-          <OutlinedTextInput
-            onChangeText={onChangeEmailAddress}
-            onBlur={() => setCanShowError(true)}
-            placeholder="Work email"
-            value={emailAddress}
-            keyboardType="email-address"
-            textContentType="emailAddress"
-            returnKeyType="done"
-            enablesReturnKeyAutomatically
-            onSubmitEditing={submit}
-            error={canShowError && !isValid()}
-          />
-          {canShowError && !isValid() && (
-            <Text style={styles.errorText}>
-              Please enter your email address.
-            </Text>
-          )}
-          <PrimaryButton onPress={submit} title="Continue" />
+        <View style={styles.formContainer}>
+          <Rays scale={0.33} style={styles.rays} />
+          <View
+            style={[
+              styles.contentBox,
+              colorScheme === 'light'
+                ? styles.contentBoxLight
+                : styles.contentBoxDark,
+            ]}
+          >
+            <Text style={styles.title}>Mobile Pattern Showcase</Text>
+            <OutlinedTextInput
+              onChangeText={onChangeEmailAddress}
+              onBlur={() => setCanShowError(true)}
+              placeholder="Work email"
+              value={emailAddress}
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              returnKeyType="done"
+              enablesReturnKeyAutomatically
+              onSubmitEditing={submit}
+              error={canShowError && !isValid()}
+            />
+            {canShowError && !isValid() && (
+              <Text style={styles.errorText}>
+                Please enter your email address.
+              </Text>
+            )}
+            <PrimaryButton onPress={submit} title="Continue" />
+          </View>
         </View>
       </KeyboardAvoidingView>
     </LinearGradient>
@@ -79,9 +103,22 @@ const styles = StyleSheet.create({
     left: '-50%',
     width: '200%',
     aspectRatio: 1,
-    backgroundColor: '#ff0000',
     opacity: 0.3,
     borderRadius: 1000,
+  },
+  waves: {
+    position: 'absolute',
+    left: '-30%',
+    bottom: '10%',
+  },
+  rays: {
+    position: 'absolute',
+    top: -20,
+    right: -20,
+    transform: [{ rotate: '22deg' }],
+  },
+  formContainer: {
+    marginHorizontal: 20,
   },
   contentBox: {
     alignSelf: 'stretch',
@@ -89,11 +126,17 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'center',
     gap: 20,
-    marginHorizontal: 20,
     padding: 42,
-    backgroundColor: '#ffffff',
     borderRadius: 5,
-    ...shadows.elevation100,
+  },
+  contentBoxLight: {
+    backgroundColor: color.neutral0,
+    ...shadow.elevation100,
+  },
+  contentBoxDark: {
+    backgroundColor: color.neutral900,
+    borderWidth: 1,
+    borderColor: 'rgb(113, 134, 174)',
   },
   title: {
     fontSize: 20,

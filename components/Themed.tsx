@@ -9,7 +9,7 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import Colors from '../constants/Colors';
+import Themes from '../constants/Themes';
 
 type ThemeProps = {
   lightColor?: string;
@@ -21,7 +21,7 @@ export type ViewProps = ThemeProps & DefaultView['props'];
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
-  colorName: keyof typeof Colors.light & keyof typeof Colors.dark
+  colorName: keyof typeof Themes.light & keyof typeof Themes.dark
 ) {
   const theme = useColorScheme() ?? 'light';
   const colorFromProps = props[theme];
@@ -29,7 +29,7 @@ export function useThemeColor(
   if (colorFromProps) {
     return colorFromProps;
   } else {
-    return Colors[theme][colorName];
+    return Themes[theme][colorName];
   }
 }
 
@@ -37,7 +37,12 @@ export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
-  return <DefaultText style={[{ color }, style]} {...otherProps} />;
+  return (
+    <DefaultText
+      style={[{ color, fontFamily: 'Mulish-Regular' }, style]}
+      {...otherProps}
+    />
+  );
 }
 
 export function View(props: ViewProps) {

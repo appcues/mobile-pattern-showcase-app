@@ -1,7 +1,8 @@
 import { router } from 'expo-router';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 import PatternCard from '../../../components/PatternCard';
+import { View } from '../../../components/Themed';
 
 type ItemData = {
   slug: string;

@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { Text, View } from '../../../components/Themed';
 
 export default function Examples() {
   return (
