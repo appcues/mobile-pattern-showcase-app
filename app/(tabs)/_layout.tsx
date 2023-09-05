@@ -1,7 +1,8 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import { Button, Pressable, useColorScheme } from 'react-native';
 
+import { useAuth } from '../../context/auth';
 import Colors from '../../constants/Colors';
 
 /**
@@ -16,6 +17,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { signOut } = useAuth();
 
   return (
     <Tabs
@@ -26,6 +28,20 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Tab One',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerRight: () => (
+            <Button
+              onPress={() =>  { console.log('SIGN OUT'); signOut(); }}
+              title="Sign Out"
+              color="#5c5cff"
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="two"
+        options={{
+          title: 'Tab Two',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -41,13 +57,6 @@ export default function TabLayout() {
               </Pressable>
             </Link>
           ),
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
     </Tabs>
