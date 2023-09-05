@@ -29,7 +29,7 @@ function useProtectedRoute(email: string | null) {
       router.replace('/sign-in');
     } else if (email && isAuthRoute) {
       // Redirect away from the sign-in page.
-      router.replace('/');
+      router.replace('/patterns');
     }
   }, [email, segments]);
 }
