@@ -27,6 +27,12 @@ export default function ExamplesLayout() {
           title: 'Examples',
         }}
       />
+      <Stack.Screen
+        name="[id]"
+        options={{
+          title: 'Example Detail',
+        }}
+      />
     </Stack>
   );
 }
