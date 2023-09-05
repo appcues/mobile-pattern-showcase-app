@@ -40,9 +40,21 @@ export default function PatternsLayout() {
         }}
       />
       <Stack.Screen
-        name="[pattern]"
+        name="modals"
         options={{
-          title: 'Detail',
+          title: 'Modals',
+        }}
+      />
+      <Stack.Screen
+        name="tooltips"
+        options={{
+          title: 'Tooltips',
+        }}
+      />
+      <Stack.Screen
+        name="embeds"
+        options={{
+          title: 'Embeds',
         }}
       />
     </Stack>
