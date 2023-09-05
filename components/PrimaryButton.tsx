@@ -1,9 +1,13 @@
-import { Text, StyleSheet, Pressable, ButtonProps } from 'react-native';
+import { ButtonProps, Pressable, StyleSheet, Text } from 'react-native';
 
 export default function PrimaryButton(props: ButtonProps) {
   const { onPress, title = 'Save' } = props;
   return (
-    <Pressable style={styles.button} onPress={onPress} accessibilityRole='button'>
+    <Pressable
+      style={styles.button}
+      onPress={onPress}
+      accessibilityRole="button"
+    >
       <Text style={styles.text}>{title}</Text>
     </Pressable>
   );

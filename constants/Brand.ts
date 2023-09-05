@@ -4,4 +4,4 @@ export const gradient = {
   galaxy: ['#5C5CFF', '#FF92C6'],
   tropico: ['#8960FF', '#FF5290'],
   babyHaze: ['#DDDDFD', '#CFEEFF'],
-}
+};
