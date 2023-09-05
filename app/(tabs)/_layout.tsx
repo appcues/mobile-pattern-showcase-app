@@ -2,8 +2,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Button, Pressable, useColorScheme } from 'react-native';
 
-import { useAuth } from '../../context/auth';
 import Colors from '../../constants/Colors';
+import { useAuth } from '../../context/auth';
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -23,7 +23,8 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -31,7 +32,10 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Button
-              onPress={() =>  { console.log('SIGN OUT'); signOut(); }}
+              onPress={() => {
+                console.log('SIGN OUT');
+                signOut();
+              }}
               title="Sign Out"
               color="#5c5cff"
             />

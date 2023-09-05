@@ -1,10 +1,14 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { SplashScreen } from 'expo-router';
+import { Slot, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import { Slot } from 'expo-router';
+
 import { AuthProvider } from '../context/auth';
 
 export {

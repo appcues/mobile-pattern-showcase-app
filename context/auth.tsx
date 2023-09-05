@@ -7,7 +7,7 @@ type AuthContextType = {
   email: string | null;
   signIn: (email: string) => void;
   signOut: () => void;
-}
+};
 
 const AuthContext = React.createContext<AuthContextType>(null!);
 
@@ -45,7 +45,8 @@ export function AuthProvider(props: PropsWithChildren) {
         signIn: (email: string) => setAuth(email),
         signOut: () => setAuth(null),
         email,
-      }}>
+      }}
+    >
       {props.children}
     </AuthContext.Provider>
   );

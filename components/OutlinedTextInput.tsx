@@ -1,9 +1,7 @@
 import { StyleSheet, TextInput, TextInputProps } from 'react-native';
 
 export default function OutlinedTextInput(props: TextInputProps) {
-  return (
-    <TextInput {...props} style={styles.input} />
-  );
+  return <TextInput {...props} style={styles.input} />;
 }
 
 const styles = StyleSheet.create({
