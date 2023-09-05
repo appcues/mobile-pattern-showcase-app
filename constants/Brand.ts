@@ -1,5 +1,8 @@
 export const color = {
+  neutral0: '#FFFFFF',
+  neutral800: '#1F2F4F',
   neutral900: '#0B1A38',
+  burple600: '#5C5CFF',
 };
 
 export const gradient = {
@@ -8,9 +11,10 @@ export const gradient = {
   galaxy: ['#5C5CFF', '#FF92C6'],
   tropico: ['#8960FF', '#FF5290'],
   babyHaze: ['#DDDDFD', '#CFEEFF'],
+  regulus: ['#0B1A38', '#3B456A'],
 };
 
-export const shadows = {
+export const shadow = {
   elevation100: {
     shadowColor: color.neutral900,
     shadowOpacity: 0.1,

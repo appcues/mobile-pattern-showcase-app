@@ -1,13 +1,28 @@
 import { Stack } from 'expo-router';
-import { Button } from 'react-native';
+import { Button, useColorScheme } from 'react-native';
 
+import Themes from '../../../constants/Themes';
 import { useAuth } from '../../../context/auth';
 
 export default function PatternsLayout() {
+  const colorScheme = useColorScheme();
   const { signOut } = useAuth();
 
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerShadowVisible: false,
+        headerStyle: {
+          backgroundColor:
+            colorScheme === 'light'
+              ? Themes.light.background
+              : Themes.dark.background,
+        },
+        headerTitleStyle: {
+          fontFamily: 'Mulish-Bold',
+        },
+      }}
+    >
       <Stack.Screen
         name="index"
         options={{
