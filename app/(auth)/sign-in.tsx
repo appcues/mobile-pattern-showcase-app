@@ -3,6 +3,8 @@ import { KeyboardAvoidingView, Text, StyleSheet, View, Platform, } from 'react-n
 import { useAuth } from '../../context/auth';
 import PrimaryButton from '../../components/PrimaryButton';
 import OutlinedTextInput from '../../components/OutlinedTextInput';
+import Logo from "../../assets/images/logo.svg";
+
 
 export default function SignIn() {
   const { signIn } = useAuth();
@@ -12,6 +14,7 @@ export default function SignIn() {
     <View style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.contentBox}>
+          <Logo width="145" height="30" style={{alignSelf: 'center'}} />
           <Text style={styles.title}>Appcues Mobile Pattern Showcase</Text>
           <OutlinedTextInput
             onChangeText={onChangeEmailAddress}
