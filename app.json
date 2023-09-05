@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "appcues-mobile-showcase",
+    "name": "Appcues Showcase",
     "slug": "appcues-mobile-showcase",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "appcues-showcase",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#5c5cff"
       }
     },
     "web": {
