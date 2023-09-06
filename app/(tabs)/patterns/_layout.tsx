@@ -29,10 +29,7 @@ export default function PatternsLayout() {
           title: 'Patterns',
           headerRight: () => (
             <Button
-              onPress={() => {
-                console.log('SIGN OUT');
-                signOut();
-              }}
+              onPress={() => signOut()}
               title="Sign Out"
               color="#5c5cff"
             />

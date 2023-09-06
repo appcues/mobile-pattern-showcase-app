@@ -5,10 +5,16 @@ import {
   ThemeProvider,
 } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Slot, SplashScreen } from 'expo-router';
-import { useEffect } from 'react';
+import {
+  Slot,
+  SplashScreen,
+  useGlobalSearchParams,
+  usePathname,
+} from 'expo-router';
+import { useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
+import * as AppcuesWrapper from '../components/AppcuesWrapper';
 import { AuthProvider } from '../context/auth';
 
 export {
@@ -25,6 +31,14 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  // https://docs.expo.dev/router/reference/screen-tracking/
+  const pathname = usePathname();
+  const params = useGlobalSearchParams();
+
+  // Ensures that first _real_ render of the app doesn't occur until
+  // SDK init complete - to avoid screen view analytics before SDK is ready
+  const [initComplete, setInitComplete] = useState(false);
+
   const [loaded, error] = useFonts({
     'Mulish-Black': require('../assets/fonts/Mulish-Black.ttf'),
     'Mulish-ExtraBold': require('../assets/fonts/Mulish-ExtraBold.ttf'),
@@ -56,7 +70,22 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
-  if (!loaded) {
+  useEffect(() => {
+    const initializeSdk = async () => {
+      await AppcuesWrapper.setup(
+        '103523',
+        '47e890cc-78cd-4391-abc6-33ea5499e95f'
+      );
+      setInitComplete(true);
+    };
+    initializeSdk();
+  }, []);
+
+  useEffect(() => {
+    AppcuesWrapper.screen(pathname);
+  }, [pathname, params]);
+
+  if (!loaded || !initComplete) {
     return null;
   }
 
