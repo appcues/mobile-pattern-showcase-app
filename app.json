@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Appcues Showcase",
+    "name": "Showcase",
     "slug": "appcues-mobile-showcase",
     "version": "1.0.0",
     "orientation": "default",
@@ -10,7 +10,11 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "dark": {
+        "image": "./assets/images/splash-dark.png",
+        "backgroundColor": "#0B1A38"
+      }
     },
     "assetBundlePatterns": [
       "**/*"
