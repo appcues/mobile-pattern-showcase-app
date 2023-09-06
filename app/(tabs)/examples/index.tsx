@@ -1,14 +1,26 @@
 import { Link } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View, useColorScheme } from 'react-native';
 
-import { Text, View } from '../../../components/Themed';
+import { Text } from '../../../components/Themed';
+import Themes from '../../../constants/Themes';
 
 export default function Examples() {
+  const colorScheme = useColorScheme();
+
   return (
-    <View style={styles.container}>
-      <Text>🚧 Coming Soon 🚧</Text>
-      <Link href="/examples/test">Test link to a detail screen</Link>
-    </View>
+    <ScrollView
+      style={{
+        backgroundColor:
+          colorScheme === 'light'
+            ? Themes.light.background
+            : Themes.dark.background,
+      }}
+    >
+      <View style={styles.container}>
+        <Text>🚧 Coming Soon 🚧</Text>
+        <Link href="/examples/test">Test link to a detail screen</Link>
+      </View>
+    </ScrollView>
   );
 }
 
