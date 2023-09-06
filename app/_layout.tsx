@@ -5,6 +5,7 @@ import {
   ThemeProvider,
 } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+import * as Linking from 'expo-linking';
 import {
   Slot,
   SplashScreen,
@@ -34,6 +35,8 @@ export default function RootLayout() {
   // https://docs.expo.dev/router/reference/screen-tracking/
   const pathname = usePathname();
   const params = useGlobalSearchParams();
+
+  const url = Linking.useURL();
 
   // Ensures that first _real_ render of the app doesn't occur until
   // SDK init complete - to avoid screen view analytics before SDK is ready
@@ -84,6 +87,15 @@ export default function RootLayout() {
   useEffect(() => {
     AppcuesWrapper.screen(pathname);
   }, [pathname, params]);
+
+  useEffect(() => {
+    AppcuesWrapper.didHandleURL(url).then((appcuesDidHandleURL) => {
+      if (!appcuesDidHandleURL) {
+        // Handle a non-Appcues URL
+        console.log(url);
+      }
+    });
+  }, [url]);
 
   if (!loaded || !initComplete) {
     return null;
