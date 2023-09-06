@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from 'expo-router';
 import { ScrollView, useColorScheme } from 'react-native';
 
-import { Text, View } from '../../../components/Themed';
+import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
 import Themes from '../../../constants/Themes';
 
 export default function ExampleDetail() {
@@ -17,9 +17,7 @@ export default function ExampleDetail() {
             : Themes.dark.background,
       }}
     >
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Detail screen for {id}!</Text>
-      </View>
+      <WrappedAppcuesFrameView frameID={id} />
     </ScrollView>
   );
 }

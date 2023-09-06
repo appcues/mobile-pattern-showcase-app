@@ -1,6 +1,8 @@
 import { router, useSegments } from 'expo-router';
 import React, { PropsWithChildren } from 'react';
 
+import * as AppcuesWrapper from '../components/AppcuesWrapper';
+
 // https://docs.expo.dev/router/reference/authentication/
 
 type AuthContextType = {
@@ -42,8 +44,14 @@ export function AuthProvider(props: PropsWithChildren) {
   return (
     <AuthContext.Provider
       value={{
-        signIn: (email: string) => setAuth(email),
-        signOut: () => setAuth(null),
+        signIn: (email: string) => {
+          AppcuesWrapper.identify(email);
+          setAuth(email);
+        },
+        signOut: () => {
+          AppcuesWrapper.reset();
+          setAuth(null);
+        },
         email,
       }}
     >
