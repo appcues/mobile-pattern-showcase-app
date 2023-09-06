@@ -5,7 +5,10 @@
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
-    "scheme": "appcues-showcase",
+    "scheme": [
+      "appcues-showcase",
+      "appcues-47e890cc-78cd-4391-abc6-33ea5499e95f"
+    ],
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
