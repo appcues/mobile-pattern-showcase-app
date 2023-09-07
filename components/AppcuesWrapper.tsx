@@ -83,7 +83,7 @@ export function debug() {
   AppcuesWrapper.debug();
 }
 
-export async function didHandleURL(url: string | null) {
+export async function didHandleURL(url: string) {
   return await AppcuesWrapper.didHandleURL(url);
 }
 
