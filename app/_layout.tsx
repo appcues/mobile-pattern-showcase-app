@@ -89,6 +89,10 @@ export default function RootLayout() {
   }, [pathname, params]);
 
   useEffect(() => {
+    if (url == null) {
+      return;
+    }
+
     AppcuesWrapper.didHandleURL(url).then((appcuesDidHandleURL) => {
       if (!appcuesDidHandleURL) {
         // Handle a non-Appcues URL
