@@ -21,6 +21,10 @@
     "production": {}
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appName": "Appcues Mobile Showcase"
+      }
+    }
   }
 }

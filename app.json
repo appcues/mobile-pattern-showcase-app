@@ -25,7 +25,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.appcues.mobile-showcase"
+      "bundleIdentifier": "com.appcues.mobile-showcase",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
