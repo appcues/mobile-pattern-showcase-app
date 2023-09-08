@@ -55,3 +55,21 @@ If you're just running the app, you can download an existing development build:
 ```sh
 $ npm run start
 ```
+
+## Releasing
+
+### Android
+
+```sh
+eas build --platform android
+eas submit --platform android --latest
+```
+
+(`--latest` flag uses the lastest EAS build)
+
+### iOS (TestFlight)
+
+```sh
+eas build --platform ios
+eas submit --platform ios --latest
+```
