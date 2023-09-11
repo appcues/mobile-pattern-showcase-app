@@ -1,39 +1,74 @@
 import {
   GestureResponderEvent,
+  Image,
+  ImageSourcePropType,
   StyleSheet,
-  Text,
-  TouchableOpacity,
+  TouchableHighlight,
+  View,
   ViewStyle,
 } from 'react-native';
-import { shadow } from '../constants/Brand';
+
+import { Text, View as ThemedView } from './Themed';
+import { color, shadow } from '../constants/Brand';
 
 type PatternCardProps = {
+  image: ImageSourcePropType;
   title: string;
+  subtitle: string;
   style?: ViewStyle;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
 };
 
 export default function PatternCard(props: PatternCardProps) {
   return (
-    <TouchableOpacity
+    <TouchableHighlight
       style={{ ...styles.container, ...props.style }}
       onPress={props.onPress}
     >
-      <Text style={styles.title}>{props.title}</Text>
-    </TouchableOpacity>
+      <ThemedView style={styles.inner} darkColor={color.neutral900}>
+        <Image source={props.image} style={styles.image} />
+        <View style={styles.detail}>
+          <Text style={styles.title}>{props.title}</Text>
+          <Text
+            style={styles.subtitle}
+            lightColor={color.neutral600}
+            darkColor={color.neutral100}
+          >
+            {props.subtitle}
+          </Text>
+        </View>
+      </ThemedView>
+    </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 42,
-    backgroundColor: '#ffffff',
-    borderRadius: 5,
+    maxWidth: 600,
+    borderRadius: 20,
     ...shadow.elevation200,
   },
+  inner: {
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
+  image: {
+    flex: 1,
+    height: 300,
+    width: '100%',
+    resizeMode: 'cover',
+  },
+  detail: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
   title: {
-    fontSize: 40,
+    fontSize: 24,
     fontFamily: 'Mulish-Bold',
-    color: '#5c5cff',
+  },
+  subtitle: {
+    fontSize: 14,
+    fontFamily: 'Mulish-Regular',
+    paddingVertical: 8,
   },
 });
