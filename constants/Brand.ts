@@ -1,5 +1,7 @@
 export const color = {
   neutral0: '#FFFFFF',
+  neutral100: '#D0D7E4',
+  neutral600: '#627293',
   neutral800: '#1F2F4F',
   neutral900: '#0B1A38',
   burple600: '#5C5CFF',
