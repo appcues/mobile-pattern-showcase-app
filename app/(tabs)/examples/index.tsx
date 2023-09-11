@@ -1,20 +1,9 @@
-import { ScrollView, useColorScheme } from 'react-native';
-
 import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
-import Themes from '../../../constants/Themes';
+import { ScrollView } from '../../../components/Themed';
 
 export default function Examples() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ScrollView
-      style={{
-        backgroundColor:
-          colorScheme === 'light'
-            ? Themes.light.background
-            : Themes.dark.background,
-      }}
-    >
+    <ScrollView>
       <WrappedAppcuesFrameView frameID="examples-root" />
     </ScrollView>
   );

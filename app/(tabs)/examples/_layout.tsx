@@ -19,6 +19,11 @@ export default function ExamplesLayout() {
         headerTitleStyle: {
           fontFamily: 'Mulish-Bold',
         },
+        headerBackTitleStyle: {
+          fontFamily: 'Mulish-Regular',
+        },
+        headerTintColor:
+          colorScheme === 'light' ? Themes.light.text : Themes.dark.text,
       }}
     >
       <Stack.Screen
