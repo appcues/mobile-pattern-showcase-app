@@ -73,6 +73,7 @@ export default function SignIn() {
               value={emailAddress}
               keyboardType="email-address"
               textContentType="emailAddress"
+              autoCapitalize="none"
               returnKeyType="done"
               enablesReturnKeyAutomatically
               onSubmitEditing={submit}
