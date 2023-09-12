@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 20,
     padding: 42,
-    borderRadius: 5,
+    borderRadius: 6,
   },
   contentBoxLight: {
     backgroundColor: color.neutral0,

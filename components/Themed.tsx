@@ -12,32 +12,29 @@ import {
 
 import Themes from '../constants/Themes';
 
-type ThemeProps = {
-  lightColor?: string;
-  darkColor?: string;
+type BackgroundVariantProps = {
+  level?: 'primaryBackground' | 'secondaryBackground' | 'tertiaryBackground';
 };
 
-export type TextProps = ThemeProps & DefaultText['props'];
-export type ViewProps = ThemeProps & DefaultView['props'];
-export type ScrollViewProps = ThemeProps & DefaultScrollView['props'];
+type ForegroundVariantProps = {
+  level?: 'primaryForeground' | 'secondaryForeground' | 'tertiaryForeground';
+};
+
+export type TextProps = ForegroundVariantProps & DefaultText['props'];
+export type ViewProps = BackgroundVariantProps & DefaultView['props'];
+export type ScrollViewProps = DefaultScrollView['props'];
 
 export function useThemeColor(
-  props: { light?: string; dark?: string },
   colorName: keyof typeof Themes.light & keyof typeof Themes.dark
 ) {
   const theme = useColorScheme() ?? 'light';
-  const colorFromProps = props[theme];
 
-  if (colorFromProps) {
-    return colorFromProps;
-  } else {
-    return Themes[theme][colorName];
-  }
+  return Themes[theme][colorName];
 }
 
 export function Text(props: TextProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  const { style, level, ...otherProps } = props;
+  const color = useThemeColor(level ?? 'primaryForeground');
 
   return (
     <DefaultText
@@ -48,21 +45,15 @@ export function Text(props: TextProps) {
 }
 
 export function View(props: ViewProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
-  const backgroundColor = useThemeColor(
-    { light: lightColor, dark: darkColor },
-    'background'
-  );
+  const { style, level, ...otherProps } = props;
+  const backgroundColor = useThemeColor(level ?? 'primaryBackground');
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
 export function ScrollView(props: ScrollViewProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
-  const backgroundColor = useThemeColor(
-    { light: lightColor, dark: darkColor },
-    'background'
-  );
+  const { style, ...otherProps } = props;
+  const backgroundColor = useThemeColor('primaryBackground');
 
   return (
     <DefaultScrollView style={[{ backgroundColor }, style]} {...otherProps} />
