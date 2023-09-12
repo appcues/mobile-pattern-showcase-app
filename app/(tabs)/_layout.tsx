@@ -42,7 +42,17 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           title: 'Examples',
-          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="more"
+        options={{
+          headerShown: false,
+          title: 'More',
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ellipsis-h" color={color} />
+          ),
         }}
       />
     </Tabs>
