@@ -1,8 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
-import { useColorScheme } from 'react-native';
 
-import Themes from '../../constants/Themes';
+import { useThemeColor } from '../../components/Themed';
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -15,7 +14,7 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const themedBackgroundColor = useThemeColor('tabBarBackground');
 
   return (
     <Tabs
@@ -23,10 +22,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: '#C0C6D9',
         tabBarActiveTintColor: '#5C5CFF',
         tabBarStyle: {
-          backgroundColor:
-            colorScheme === 'light'
-              ? Themes.light.background
-              : Themes.dark.background,
+          backgroundColor: themedBackgroundColor,
         },
         tabBarLabelStyle: {
           fontFamily: 'Mulish-Regular',

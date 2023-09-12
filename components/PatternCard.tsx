@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import { Text, View as ThemedView } from './Themed';
-import { color, shadow } from '../constants/Brand';
+import { shadow } from '../constants/Brand';
 
 type PatternCardProps = {
   image: ImageSourcePropType;
@@ -25,15 +25,11 @@ export default function PatternCard(props: PatternCardProps) {
       style={{ ...styles.container, ...props.style }}
       onPress={props.onPress}
     >
-      <ThemedView style={styles.inner} darkColor={color.neutral900}>
+      <ThemedView style={styles.inner} level="secondaryBackground">
         <Image source={props.image} style={styles.image} />
         <View style={styles.detail}>
           <Text style={styles.title}>{props.title}</Text>
-          <Text
-            style={styles.subtitle}
-            lightColor={color.neutral600}
-            darkColor={color.neutral100}
-          >
+          <Text style={styles.subtitle} level="tertiaryForeground">
             {props.subtitle}
           </Text>
         </View>
