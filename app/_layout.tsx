@@ -76,8 +76,8 @@ export default function RootLayout() {
   useEffect(() => {
     const initializeSdk = async () => {
       await AppcuesWrapper.setup(
-        '103523',
-        '47e890cc-78cd-4391-abc6-33ea5499e95f'
+        '98227',
+        '16daf46b-3231-4e4a-bb3c-273a4e9100dd'
       );
       setInitComplete(true);
     };
