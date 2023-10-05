@@ -28,6 +28,26 @@
       "bundleIdentifier": "com.appcues.mobile-showcase",
       "config": {
         "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "UIAppFonts": [
+          "Mulish-Black.ttf",
+          "Mulish-ExtraBold.ttf",
+          "Mulish-Bold.ttf",
+          "Mulish-SemiBold.ttf",
+          "Mulish-Medium.ttf",
+          "Mulish-Regular.ttf",
+          "Mulish-Light.ttf",
+          "Mulish-ExtraLight.ttf",
+          "Mulish-BlackItalic.ttf",
+          "Mulish-ExtraBoldItalic.ttf",
+          "Mulish-BoldItalic.ttf",
+          "Mulish-SemiBoldItalic.ttf",
+          "Mulish-MediumItalic.ttf",
+          "Mulish-Italic.ttf",
+          "Mulish-LightItalic.ttf",
+          "Mulish-ExtraLightItalic.ttf"
+        ]
       }
     },
     "android": {
