@@ -10,11 +10,14 @@ export default function Modals() {
       <Overview
         title="Use partial and full-screen takeovers to convey branded information."
         callToAction="See a modal in action"
+        testID="modals-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-modal');
         }}
       />
-      <Text style={styles.useCases}>Use Cases</Text>
+      <Text style={styles.useCases} testID="modals-use-cases-header">
+        Use Cases
+      </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="modals-use-cases" />
     </ScrollView>
   );

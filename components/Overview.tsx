@@ -15,6 +15,7 @@ type OverviewProps = {
   title: string;
   callToAction: string;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
+  testID: string;
 };
 
 export default function Overview(props: OverviewProps) {
@@ -28,7 +29,11 @@ export default function Overview(props: OverviewProps) {
       <Text style={styles.overview}>{props.title}</Text>
       <View>
         <Rays scale={0.33} style={styles.rays} />
-        <PrimaryButton onPress={props.onPress} title={props.callToAction} />
+        <PrimaryButton
+          onPress={props.onPress}
+          title={props.callToAction}
+          testID={props.testID}
+        />
       </View>
     </LinearGradient>
   );

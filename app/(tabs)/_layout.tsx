@@ -35,6 +35,7 @@ export default function TabLayout() {
           headerShown: false,
           title: 'Patterns',
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          tabBarTestID: 'patterns-tab',
         }}
       />
       <Tabs.Screen
@@ -43,6 +44,7 @@ export default function TabLayout() {
           headerShown: false,
           title: 'Examples',
           tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
+          tabBarTestID: 'examples-tab',
         }}
       />
       <Tabs.Screen
@@ -53,6 +55,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ellipsis-h" color={color} />
           ),
+          tabBarTestID: 'more-tab',
         }}
       />
     </Tabs>

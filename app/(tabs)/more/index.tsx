@@ -15,16 +15,26 @@ export default function Examples() {
   return (
     <ScrollView>
       <WrappedAppcuesFrameView frameID="more-root" />
-      <View style={styles.card} level="secondaryBackground">
+      <View
+        style={styles.card}
+        level="secondaryBackground"
+        testID="sign-out-card"
+      >
         <PlainView style={styles.profileRow}>
           <FontAwesome size={34} name="user" />
-          <Text style={styles.email}>{email}</Text>
-          <TouchableOpacity onPress={() => signOut()}>
-            <Text style={styles.link}>Sign Out</Text>
-          </TouchableOpacity>
+          <PlainView>
+            <Text style={styles.email}>{email}</Text>
+            <TouchableOpacity onPress={() => signOut()}>
+              <Text style={styles.link}>Sign Out</Text>
+            </TouchableOpacity>
+          </PlainView>
         </PlainView>
       </View>
-      <View style={styles.card} level="secondaryBackground">
+      <View
+        style={styles.card}
+        level="secondaryBackground"
+        testID="debugger-card"
+      >
         <Text>
           The Appcues debugger is an in-app overlay that provides debug
           information in an accessible manner.
@@ -36,7 +46,11 @@ export default function Examples() {
           title="Launch the debugger"
         />
       </View>
-      <View style={styles.card} level="secondaryBackground">
+      <View
+        style={styles.card}
+        level="secondaryBackground"
+        testID="colophon-card"
+      >
         <Text style={styles.colophonText}>
           This app is created using React Native, Expo, and the Appcues Mobile
           SDK.{'\n'}
