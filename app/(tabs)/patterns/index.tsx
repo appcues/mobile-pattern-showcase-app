@@ -44,6 +44,7 @@ export default function Patterns() {
         title={item.title}
         subtitle={item.subtitle}
         onPress={() => router.push(`/patterns/${item.slug}`)}
+        testID={`${item.slug}-card`}
         style={{
           marginBottom: 20,
           marginHorizontal: 20,

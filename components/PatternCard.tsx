@@ -17,6 +17,7 @@ type PatternCardProps = {
   subtitle: string;
   style?: ViewStyle;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
+  testID?: string;
 };
 
 export default function PatternCard(props: PatternCardProps) {
@@ -24,6 +25,7 @@ export default function PatternCard(props: PatternCardProps) {
     <TouchableHighlight
       style={{ ...styles.container, ...props.style }}
       onPress={props.onPress}
+      testID={props.testID}
     >
       <ThemedView style={styles.inner} level="secondaryBackground">
         <Image source={props.image} style={styles.image} />

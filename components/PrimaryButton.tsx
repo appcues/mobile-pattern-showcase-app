@@ -1,27 +1,37 @@
-import { ButtonProps, Pressable, StyleSheet, Text } from 'react-native';
+import {
+  ButtonProps,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 export default function PrimaryButton(props: ButtonProps) {
   const { onPress, title = 'Save' } = props;
   return (
-    <Pressable
-      style={styles.button}
-      onPress={onPress}
-      accessibilityRole="button"
-    >
-      <Text style={styles.text}>{title}</Text>
-    </Pressable>
+    <View style={styles.buttonWrap}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}
+        accessibilityRole="button"
+        testID={props.testID}
+      >
+        <Text style={styles.text}>{title}</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  buttonWrap: {
+    backgroundColor: '#5c5cff',
+    borderRadius: 6,
+  },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 4,
     paddingHorizontal: 16,
-    borderRadius: 6,
-    backgroundColor: '#5c5cff',
-    elevation: 3,
     minHeight: 52,
   },
   text: {

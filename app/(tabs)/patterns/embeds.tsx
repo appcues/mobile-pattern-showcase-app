@@ -10,11 +10,14 @@ export default function Embeds() {
       <Overview
         title="Inject seamless-looking experiences inline alongside your other app content."
         callToAction="See an embed in action"
+        testID="embeds-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-embed');
         }}
       />
-      <Text style={styles.useCases}>Use Cases</Text>
+      <Text style={styles.useCases} testID="embeds-use-cases-header">
+        Use Cases
+      </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-use-cases" />
     </ScrollView>
   );

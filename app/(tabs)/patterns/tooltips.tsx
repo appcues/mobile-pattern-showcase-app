@@ -10,11 +10,14 @@ export default function Tooltips() {
       <Overview
         title="Highlight specific app elements to draw user attention and nudge action."
         callToAction="See tooltips in action"
+        testID="tooltips-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-tooltip');
         }}
       />
-      <Text style={styles.useCases}>Use Cases</Text>
+      <Text style={styles.useCases} testID="tooltips-use-cases-header">
+        Use Cases
+      </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="tooltips-use-cases" />
     </ScrollView>
   );
