@@ -30,6 +30,7 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
+        "AppcuesUniversalLinkHostAllowList": [],
         "UIAppFonts": [
           "Mulish-Black.ttf",
           "Mulish-ExtraBold.ttf",
