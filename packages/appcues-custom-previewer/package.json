@@ -1,0 +1,9 @@
+{
+  "name": "appcues-custom-previewer",
+  "version": "1.0.0",
+  "description": "Previewer for Appcues flows",
+  "main": "index.js",
+  "author": "Appcues <mobile@appcues.com> (https://www.appcues.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/appcues/mobile-pattern-showcase-app#readme"
+}
