@@ -48,6 +48,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="preview"
+        options={{
+          headerShown: false,
+          title: 'Preview',
+          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} />,
+          tabBarTestID: 'preview-tab',
+        }}
+      />
+      <Tabs.Screen
         name="more"
         options={{
           headerShown: false,
