@@ -24,9 +24,11 @@ function useProtectedRoute(email: string | null) {
 
   React.useEffect(() => {
     const isAuthRoute = segments[0] === '(auth)';
+    const isPreviewRoute =
+      segments[0] === '(tabs)' && segments[1] === 'preview';
 
     // If the user is not signed in and the initial segment is not anything in the auth group.
-    if (!email && !isAuthRoute) {
+    if (!email && !isAuthRoute && !isPreviewRoute) {
       // Redirect to the sign-in page.
       router.replace('/sign-in');
     } else if (email && isAuthRoute) {
