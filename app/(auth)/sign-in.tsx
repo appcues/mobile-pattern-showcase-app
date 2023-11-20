@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
   },
   waves: {
     position: 'absolute',
-    left: '-30%',
+    left: 0,
+    marginLeft: -100,
     bottom: '10%',
   },
   rays: {

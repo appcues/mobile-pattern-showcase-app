@@ -42,7 +42,6 @@ export default function PatternCard(props: PatternCardProps) {
 
 const styles = StyleSheet.create({
   container: {
-    maxWidth: 600,
     borderRadius: 20,
     ...shadow.elevation200,
   },
