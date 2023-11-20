@@ -7,6 +7,7 @@ import { ScrollView, Text } from '../../../components/Themed';
 export default function Embeds() {
   return (
     <ScrollView>
+      <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-banner" />
       <Overview
         title="Inject seamless-looking experiences inline alongside your other app content."
         callToAction="See an embed in action"
