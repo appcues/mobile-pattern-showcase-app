@@ -17,6 +17,7 @@ export default function OutlinedTextInput(props: OutlinedTextInputProps) {
   return (
     <TextInput
       {...props}
+      placeholderTextColor="#C2C8D1"
       style={[
         styles.input,
         {
