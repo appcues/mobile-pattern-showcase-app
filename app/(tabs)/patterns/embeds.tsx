@@ -3,14 +3,17 @@ import { StyleSheet } from 'react-native';
 import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function Embeds() {
+  const { language, strings } = useLocale();
+
   return (
     <ScrollView>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-banner" />
       <Overview
-        title="Inject seamless-looking experiences inline alongside your other app content."
-        callToAction="See an embed in action"
+        title={strings[language].tooltips.overview}
+        callToAction={strings[language].tooltips.callToAction}
         testID="embeds-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-embed');

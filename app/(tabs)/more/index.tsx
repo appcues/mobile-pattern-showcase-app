@@ -8,9 +8,11 @@ import PrimaryButton from '../../../components/PrimaryButton';
 import { ScrollView, Text, View } from '../../../components/Themed';
 import { shadow } from '../../../constants/Brand';
 import { useAuth } from '../../../context/auth';
+import { useLocale } from '../../../context/locale';
 
 export default function Examples() {
   const { email, signOut } = useAuth();
+  const { language, strings } = useLocale();
 
   return (
     <ScrollView>
@@ -25,7 +27,7 @@ export default function Examples() {
           <PlainView>
             <Text style={styles.email}>{email}</Text>
             <TouchableOpacity onPress={() => signOut()}>
-              <Text style={styles.link}>Sign Out</Text>
+              <Text style={styles.link}>{strings[language].more.signOut}</Text>
             </TouchableOpacity>
           </PlainView>
         </PlainView>
@@ -35,15 +37,12 @@ export default function Examples() {
         level="secondaryBackground"
         testID="debugger-card"
       >
-        <Text>
-          The Appcues debugger is an in-app overlay that provides debug
-          information in an accessible manner.
-        </Text>
+        <Text>{strings[language].more.debugger}</Text>
         <PrimaryButton
           onPress={() => {
             AppcuesWrapper.debug();
           }}
-          title="Launch the debugger"
+          title={strings[language].more.debuggerButton}
         />
       </View>
       <View
@@ -52,10 +51,9 @@ export default function Examples() {
         testID="colophon-card"
       >
         <Text style={styles.colophonText}>
-          This app is created using React Native, Expo, and the Appcues Mobile
-          SDK.{'\n'}
+          {strings[language].more.colophon + '\n'}
           <Link href="https://github.com/appcues/mobile-pattern-showcase-app">
-            MIT Licensed and source available.
+            {strings[language].more.sourceLink}
           </Link>
         </Text>
       </View>

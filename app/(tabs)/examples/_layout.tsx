@@ -1,10 +1,12 @@
 import { Stack } from 'expo-router';
 
 import { useThemeColor } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function ExamplesLayout() {
   const themedForegroundColor = useThemeColor('primaryForeground');
   const themedBackgroundColor = useThemeColor('tabBarBackground');
+  const { language, strings } = useLocale();
 
   return (
     <Stack
@@ -25,7 +27,7 @@ export default function ExamplesLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: 'Examples',
+          title: strings[language].tabs.examples,
         }}
       />
       <Stack.Screen

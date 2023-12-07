@@ -1,10 +1,12 @@
 import { Stack } from 'expo-router';
 
 import { useThemeColor } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function PatternsLayout() {
   const themedForegroundColor = useThemeColor('primaryForeground');
   const themedBackgroundColor = useThemeColor('tabBarBackground');
+  const { language, strings } = useLocale();
 
   return (
     <Stack
@@ -25,25 +27,25 @@ export default function PatternsLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: 'Patterns',
+          title: strings[language].tabs.patterns,
         }}
       />
       <Stack.Screen
         name="modals"
         options={{
-          title: 'Modals',
+          title: strings[language].modals.title,
         }}
       />
       <Stack.Screen
         name="tooltips"
         options={{
-          title: 'Tooltips',
+          title: strings[language].tooltips.title,
         }}
       />
       <Stack.Screen
         name="embeds"
         options={{
-          title: 'Embeds',
+          title: strings[language].embeds.title,
         }}
       />
     </Stack>

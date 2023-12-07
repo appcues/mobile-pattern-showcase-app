@@ -1,22 +1,19 @@
 import { Image, StyleSheet } from 'react-native';
 
 import { Text, View } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function Preview() {
+  const { language, strings } = useLocale();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        The Appcues Mobile Builder allows you to easily use a deep link to
-        preview your flows in your app:
-      </Text>
+      <Text style={styles.title}>{strings[language].preview.p1}</Text>
       <Image
         source={require('../../../assets/images/flow-preview-modal.png')}
         style={styles.image}
       />
-      <Text style={styles.title}>
-        If you don't have the Appcues Mobile SDK installed in your app, this app
-        allows you to test out your flow.
-      </Text>
+      <Text style={styles.title}>{strings[language].preview.p2}</Text>
     </View>
   );
 }

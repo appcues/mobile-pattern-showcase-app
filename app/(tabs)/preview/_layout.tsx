@@ -1,10 +1,12 @@
 import { Stack } from 'expo-router';
 
 import { useThemeColor } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function PreviewLayout() {
   const themedForegroundColor = useThemeColor('primaryForeground');
   const themedBackgroundColor = useThemeColor('tabBarBackground');
+  const { language, strings } = useLocale();
 
   return (
     <Stack
@@ -25,13 +27,13 @@ export default function PreviewLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: 'Preview',
+          title: strings[language].tabs.preview,
         }}
       />
       <Stack.Screen
         name="[...preview]"
         options={{
-          title: 'Preview',
+          title: strings[language].tabs.preview,
         }}
       />
     </Stack>

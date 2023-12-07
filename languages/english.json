@@ -1,0 +1,56 @@
+{
+  "signIn": {
+    "title": "Mobile Pattern Showcase",
+    "input": "Work email",
+    "inputError": "Please enter your email address.",
+    "button": "Continue"
+  },
+  "tabs": {
+    "patterns": "Patterns",
+    "examples": "Examples",
+    "preview": "Preview",
+    "more": "More"
+  },
+  "patterns": {
+    "list": {
+      "modals": {
+        "title": "Modals",
+        "subtitle": "Use partial and full-screen takeovers to convey branded information."
+      },
+      "tooltips": {
+        "title": "Tooltips",
+        "subtitle": "Highlight specific app elements to draw user attention and nudge action."
+      },
+      "embeds": {
+        "title": "Embeds",
+        "subtitle": "Inject seamless-looking experiences inline alongside your other app content."
+      }
+    }
+  },
+  "modals": {
+    "title": "Modals",
+    "overview": "Use partial and full-screen takeovers to convey branded information.",
+    "callToAction": "See a modal in action"
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "overview": "Highlight specific app elements to draw user attention and nudge action.",
+    "callToAction": "See tooltips in action"
+  },
+  "embeds": {
+    "title": "Embeds",
+    "overview": "Inject seamless-looking experiences inline alongside your other app content.",
+    "callToAction": "See an embed in action"
+  },
+  "preview": {
+    "p1": "The Appcues Mobile Builder allows you to easily use a deep link to preview your flows in your app:",
+    "p2": "If you don't have the Appcues Mobile SDK installed in your app, this app allows you to test out your flow."
+  },
+  "more": {
+    "signOut": "Sign Out",
+    "debugger": "The Appcues debugger is an in-app overlay that provides debug information in an accessible manner.",
+    "debuggerButton": "Launch the debugger",
+    "colophon": "This app is created using React Native, Expo, and the Appcues Mobile SDK.",
+    "sourceLink": "MIT Licensed and source available."
+  }
+}
