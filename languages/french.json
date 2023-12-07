@@ -1,0 +1,56 @@
+{
+  "signIn": {
+    "title": "Vitrine de motifs mobile",
+    "input": "Email de travail",
+    "inputError": "Veuillez entrer votre adresse e-mail.",
+    "button": "Continuer"
+  },
+  "tabs": {
+    "patterns": "Motifs",
+    "examples": "Exemples",
+    "preview": "Aperçu",
+    "more": "Plus"
+  },
+  "patterns": {
+    "list": {
+      "modals": {
+        "title": "Modals",
+        "subtitle": "Utilisez des captures partielles et plein écran pour transmettre des informations de marque."
+      },
+      "tooltips": {
+        "title": "Tooltips",
+        "subtitle": "Mettez en surbrillance des éléments spécifiques de l'application pour attirer l'attention des utilisateurs et inciter à l'action."
+      },
+      "embeds": {
+        "title": "Embeds",
+        "subtitle": "Injectez des expériences fluides en ligne avec le contenu de votre autre application."
+      }
+    }
+  },
+  "modals": {
+    "title": "Modals",
+    "overview": "Utilisez des captures partielles et plein écran pour transmettre des informations de marque.",
+    "callToAction": "Voir un modal en action"
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "overview": "Mettez en surbrillance des éléments spécifiques de l'application pour attirer l'attention des utilisateurs et inciter à l'action.",
+    "callToAction": "Voir les tooltips en action"
+  },
+  "embeds": {
+    "title": "Embeds",
+    "overview": "Injectez des expériences fluides en ligne avec le contenu de votre autre application.",
+    "callToAction": "Voir un embed en action"
+  },
+  "preview": {
+    "p1": "L'Appcues Mobile Builder vous permet d'utiliser facilement un lien profond pour prévisualiser vos flux dans votre application :",
+    "p2": "Si le SDK Appcues Mobile n'est pas installé dans votre application, cette application vous permet de tester votre flux."
+  },
+  "more": {
+    "signOut": "Se déconnecter",
+    "debugger": "Le débogueur Appcues est une superposition intégrée à l'application qui fournit des informations de débogage de manière accessible.",
+    "debuggerButton": "Lancez le débogueur",
+    "colophon": "Cette application est créée à l'aide de React Native, Expo et du SDK Appcues Mobile.",
+    "sourceLink": "Licence MIT et source disponible."
+  }
+}

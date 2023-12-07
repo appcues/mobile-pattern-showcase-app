@@ -1,10 +1,12 @@
 import { Stack } from 'expo-router';
 
 import { useThemeColor } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function MoreLayout() {
   const themedForegroundColor = useThemeColor('primaryForeground');
   const themedBackgroundColor = useThemeColor('tabBarBackground');
+  const { language, strings } = useLocale();
 
   return (
     <Stack
@@ -25,7 +27,7 @@ export default function MoreLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: 'More',
+          title: strings[language].tabs.more,
         }}
       />
     </Stack>

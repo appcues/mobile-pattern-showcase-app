@@ -2,6 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
 import { useThemeColor } from '../../components/Themed';
+import { useLocale } from '../../context/locale';
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -15,6 +16,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const themedBackgroundColor = useThemeColor('tabBarBackground');
+  const { language, strings } = useLocale();
 
   return (
     <Tabs
@@ -33,7 +35,7 @@ export default function TabLayout() {
         name="patterns"
         options={{
           headerShown: false,
-          title: 'Patterns',
+          title: strings[language].tabs.patterns,
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
           tabBarTestID: 'patterns-tab',
         }}
@@ -42,7 +44,7 @@ export default function TabLayout() {
         name="examples"
         options={{
           headerShown: false,
-          title: 'Examples',
+          title: strings[language].tabs.examples,
           tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
           tabBarTestID: 'examples-tab',
         }}
@@ -51,7 +53,7 @@ export default function TabLayout() {
         name="preview"
         options={{
           headerShown: false,
-          title: 'Preview',
+          title: strings[language].tabs.preview,
           tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} />,
           tabBarTestID: 'preview-tab',
         }}
@@ -60,7 +62,7 @@ export default function TabLayout() {
         name="more"
         options={{
           headerShown: false,
-          title: 'More',
+          title: strings[language].tabs.more,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ellipsis-h" color={color} />
           ),

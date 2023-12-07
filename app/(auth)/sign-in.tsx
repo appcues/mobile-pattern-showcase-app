@@ -15,10 +15,12 @@ import PrimaryButton from '../../components/PrimaryButton';
 import { Text } from '../../components/Themed';
 import { color, gradient, shadow } from '../../constants/Brand';
 import { useAuth } from '../../context/auth';
+import { useLocale } from '../../context/locale';
 
 export default function SignIn() {
   const colorScheme = useColorScheme();
   const { signIn } = useAuth();
+  const { language, strings } = useLocale();
   const [emailAddress, onChangeEmailAddress] = useState('');
   const [canShowError, setCanShowError] = useState(false);
 
@@ -65,11 +67,11 @@ export default function SignIn() {
                 : styles.contentBoxDark,
             ]}
           >
-            <Text style={styles.title}>Mobile Pattern Showcase</Text>
+            <Text style={styles.title}>{strings[language].signIn.title}</Text>
             <OutlinedTextInput
               onChangeText={onChangeEmailAddress}
               onBlur={() => setCanShowError(true)}
-              placeholder="Work email"
+              placeholder={strings[language].signIn.input}
               value={emailAddress}
               keyboardType="email-address"
               textContentType="emailAddress"
@@ -81,10 +83,13 @@ export default function SignIn() {
             />
             {canShowError && !isValid() && (
               <Text style={styles.errorText}>
-                Please enter your email address.
+                {strings[language].signIn.inputError}
               </Text>
             )}
-            <PrimaryButton onPress={submit} title="Continue" />
+            <PrimaryButton
+              onPress={submit}
+              title={strings[language].signIn.button}
+            />
           </View>
         </View>
       </KeyboardAvoidingView>

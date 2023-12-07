@@ -3,13 +3,16 @@ import { StyleSheet } from 'react-native';
 import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function Modals() {
+  const { language, strings } = useLocale();
+
   return (
     <ScrollView>
       <Overview
-        title="Use partial and full-screen takeovers to convey branded information."
-        callToAction="See a modal in action"
+        title={strings[language].modals.overview}
+        callToAction={strings[language].modals.callToAction}
         testID="modals-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-modal');

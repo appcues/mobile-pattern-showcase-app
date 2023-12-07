@@ -17,6 +17,7 @@ import { useColorScheme } from 'react-native';
 
 import * as AppcuesWrapper from '../components/AppcuesWrapper';
 import { AuthProvider } from '../context/auth';
+import { LocaleProvider } from '../context/locale';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -113,9 +114,11 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AuthProvider>
-        <Slot />
-      </AuthProvider>
+      <LocaleProvider>
+        <AuthProvider>
+          <Slot />
+        </AuthProvider>
+      </LocaleProvider>
     </ThemeProvider>
   );
 }

@@ -4,45 +4,37 @@ import { FlatList, ImageSourcePropType, StyleSheet } from 'react-native';
 import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
 import PatternCard from '../../../components/PatternCard';
 import { View } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 type ItemData = {
-  slug: string;
-  title: string;
-  subtitle: string;
+  slug: 'modals' | 'tooltips' | 'embeds';
   image: ImageSourcePropType;
 };
 
 const DATA: ItemData[] = [
   {
     slug: 'modals',
-    title: 'Modals',
-    subtitle:
-      'Use partial and full-screen takeovers to convey branded information.',
     image: require('../../../assets/images/modals.png'),
   },
   {
     slug: 'tooltips',
-    title: 'Tooltips',
-    subtitle:
-      'Highlight specific app elements to draw user attention and nudge action.',
     image: require('../../../assets/images/tooltips.png'),
   },
   {
     slug: 'embeds',
-    title: 'Embeds',
-    subtitle:
-      'Inject seamless-looking experiences inline alongside your other app content.',
     image: require('../../../assets/images/embeds.png'),
   },
 ];
 
 export default function Patterns() {
+  const { language, strings } = useLocale();
+
   const renderItem = ({ item }: { item: ItemData }) => {
     return (
       <PatternCard
         image={item.image}
-        title={item.title}
-        subtitle={item.subtitle}
+        title={strings[language].patterns.list[item.slug].title}
+        subtitle={strings[language].patterns.list[item.slug].subtitle}
         onPress={() => router.push(`/patterns/${item.slug}`)}
         testID={`${item.slug}-card`}
         style={{

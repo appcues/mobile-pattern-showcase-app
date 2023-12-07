@@ -3,13 +3,16 @@ import { StyleSheet } from 'react-native';
 import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
+import { useLocale } from '../../../context/locale';
 
 export default function Tooltips() {
+  const { language, strings } = useLocale();
+
   return (
     <ScrollView>
       <Overview
-        title="Highlight specific app elements to draw user attention and nudge action."
-        callToAction="See tooltips in action"
+        title={strings[language].tooltips.overview}
+        callToAction={strings[language].tooltips.callToAction}
         testID="tooltips-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-tooltip');
