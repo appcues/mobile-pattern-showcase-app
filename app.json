@@ -30,6 +30,7 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
+        "CFBundleDisplayName": "Appcues",
         "CFBundleAllowMixedLocalizations": true,
         "AppcuesUniversalLinkHostAllowList": [],
         "UIAppFonts": [
