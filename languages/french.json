@@ -50,6 +50,8 @@
     "signOut": "Se déconnecter",
     "debugger": "Le débogueur Appcues est une superposition intégrée à l'application qui fournit des informations de débogage de manière accessible.",
     "debuggerButton": "Lancez le débogueur",
+    "demo": "Intéressé par Appcues pour mobile ? Prévoyez du temps pour apprendre à offrir les expériences fluides et axées sur les produits qu'exigent vos utilisateurs.",
+    "demoButton": "Réservez une démo",
     "colophon": "Cette application est créée à l'aide de React Native, Expo et du SDK Appcues Mobile.",
     "sourceLink": "Licence MIT et source disponible."
   }

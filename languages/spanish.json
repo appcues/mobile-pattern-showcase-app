@@ -50,6 +50,8 @@
     "signOut": "Desconectar",
     "debugger": "El depurador de Appcues es una superposición en la aplicación que proporciona información de depuración de forma accesible.",
     "debuggerButton": "Inicie el depurador",
+    "demo": "¿Interesado en Appcues para móviles? Programe tiempo para aprender cómo ofrecer las experiencias fluidas y basadas en productos que sus usuarios exigen.",
+    "demoButton": "Reserva una demostración",
     "colophon": "Esta aplicación se crea utilizando React Native, Expo y Appcues Mobile SDK.",
     "sourceLink": "Con licencia del MIT y fuente disponible."
   }

@@ -1,4 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import * as Linking from 'expo-linking';
 import { Link } from 'expo-router';
 import { View as PlainView, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -13,6 +14,8 @@ import { useLocale } from '../../../context/locale';
 export default function Examples() {
   const { email, signOut } = useAuth();
   const { language, strings } = useLocale();
+
+  const demoLink = `https://www.appcues.com/demo-request/schedule-demo?email=${email}&platform_type__c=Mobile&how_did_you_find_appcues_=Mobile%20Showcase%20app`;
 
   return (
     <ScrollView>
@@ -43,6 +46,19 @@ export default function Examples() {
             AppcuesWrapper.debug();
           }}
           title={strings[language].more.debuggerButton}
+        />
+      </View>
+      <View
+        style={styles.card}
+        level="secondaryBackground"
+        testID="debugger-card"
+      >
+        <Text>{strings[language].more.demo}</Text>
+        <PrimaryButton
+          onPress={() => {
+            Linking.openURL(demoLink);
+          }}
+          title={strings[language].more.demoButton}
         />
       </View>
       <View
