@@ -1,0 +1,56 @@
+{
+  "signIn": {
+    "title": "Escaparate de patrones móviles",
+    "input": "Correo electrónico del trabajo",
+    "inputError": "Por favor, introduzca su dirección de correo electrónico.",
+    "button": "Continuar"
+  },
+  "tabs": {
+    "patterns": "Patrones",
+    "examples": "Ejemplos",
+    "preview": "Avance",
+    "more": "Más"
+  },
+  "patterns": {
+    "list": {
+      "modals": {
+        "title": "Modals",
+        "subtitle": "Utilice tomas de control parciales y de pantalla completa para transmitir información de marca."
+      },
+      "tooltips": {
+        "title": "Tooltips",
+        "subtitle": "Resalte elementos específicos de la aplicación para llamar la atención del usuario y estimular la acción."
+      },
+      "embeds": {
+        "title": "Embeds",
+        "subtitle": "Inyecte experiencias fluidas en línea junto con el resto del contenido de su aplicación."
+      }
+    }
+  },
+  "modals": {
+    "title": "Modals",
+    "overview": "Utilice tomas de control parciales y de pantalla completa para transmitir información de marca.",
+    "callToAction": "Vea un modal en acción"
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "overview": "Resalte elementos específicos de la aplicación para llamar la atención del usuario y estimular la acción.",
+    "callToAction": "Vea la tooltip en acción"
+  },
+  "embeds": {
+    "title": "Embeds",
+    "overview": "Inyecte experiencias fluidas en línea junto con el resto del contenido de su aplicación.",
+    "callToAction": "Vea un embed en acción"
+  },
+  "preview": {
+    "p1": "Appcues Mobile Builder le permite utilizar fácilmente un enlace profundo para obtener una vista previa de sus flujos en su aplicación:",
+    "p2": "Si no tiene instalado el SDK de Appcues Mobile en su aplicación, esta aplicación le permite probar su flujo."
+  },
+  "more": {
+    "signOut": "Desconectar",
+    "debugger": "El depurador de Appcues es una superposición en la aplicación que proporciona información de depuración de forma accesible.",
+    "debuggerButton": "Inicie el depurador",
+    "colophon": "Esta aplicación se crea utilizando React Native, Expo y Appcues Mobile SDK.",
+    "sourceLink": "Con licencia del MIT y fuente disponible."
+  }
+}
