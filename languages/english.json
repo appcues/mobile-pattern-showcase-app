@@ -50,6 +50,8 @@
     "signOut": "Sign Out",
     "debugger": "The Appcues debugger is an in-app overlay that provides debug information in an accessible manner.",
     "debuggerButton": "Launch the debugger",
+    "demo": "Interested in learning more about Appcues for mobile? Schedule a personalized demo to learn how to deliver the frictionless, product-led experiences your users demand.",
+    "demoButton": "Book a demo",
     "colophon": "This app is created using React Native, Expo, and the Appcues Mobile SDK.",
     "sourceLink": "MIT Licensed and source available."
   }
