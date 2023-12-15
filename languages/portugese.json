@@ -1,0 +1,58 @@
+{
+  "signIn": {
+    "title": "Galeria de padrões mobile",
+    "input": "E-mail de trabalho",
+    "inputError": "Por favor, insira seu endereço de e-mail",
+    "button": "Continuar"
+  },
+  "tabs": {
+    "patterns": "Padrões",
+    "examples": "Exemplos",
+    "preview": "Visualização",
+    "more": "Mais"
+  },
+  "patterns": {
+    "list": {
+      "modals": {
+        "title": "Modals",
+        "subtitle": "Utilize sobreposições parciais ou em tela cheia para mostrar informações com a sua marca."
+      },
+      "tooltips": {
+        "title": "Tooltips",
+        "subtitle": "Destaque elementos específicos do aplicativo para chamar a atenção do usuário e incentivar a ação."
+      },
+      "embeds": {
+        "title": "Embeds",
+        "subtitle": "Injete experiências ao lado do conteúdo do seu aplicativo."
+      }
+    }
+  },
+  "modals": {
+    "title": "Modals",
+    "overview": "Utilize janelas parciais ou em tela cheia para mostrar informações com a sua marca.",
+    "callToAction": "Veja modal em ação"
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "overview": "Destaque elementos específicos do aplicativo para chamar a atenção do usuário e incentivar a ação.",
+    "callToAction": "Veja tooltips em ação"
+  },
+  "embeds": {
+    "title": "Embeds",
+    "overview": "Injete experiências com aparência integrada ao lado do conteúdo do seu aplicativo.",
+    "callToAction": "Veja embed em ação"
+  },
+  "preview": {
+    "p1": "O Appcues Mobile Builder permite que você use facilmente um link para visualizar suas experiências direto no seu aplicativo:",
+    "p2": "Se você ainda não possui a Appcues Mobile SDK instalado em seu aplicativo, esse aplicativo permite que você teste sua experiências."
+  },
+  "more": {
+    "signOut": "Sair",
+    "debugger": "O depurador da Appcues é uma ferramenta fornece dados de depuração de uma forma acessível dentro da aplicação.",
+    "debuggerButton": "Lançar o depurador",
+    "demo": "Interessado em saber mais sobre a Appcues para dispositivos móveis? Agende uma demonstração personalizada para aprender como oferecer as experiências sem atritos, lideradas pelo produto, que seus usuários exigem.",
+    "demoButton": "Agendar uma demonstração",
+    "colophon": "Este aplicativo foi criado usando React Native, Expo e Appcues Mobile SDK.",
+    "sourceLink": "Licenciado pelo MIT e código-fonte disponível."
+  }
+}
