@@ -19,7 +19,7 @@ export default function Tooltips() {
         }}
       />
       <Text style={styles.useCases} testID="tooltips-use-cases-header">
-        Use Cases
+        {strings[language].patterns.useCases}
       </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="tooltips-use-cases" />
     </ScrollView>

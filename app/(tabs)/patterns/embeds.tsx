@@ -12,15 +12,15 @@ export default function Embeds() {
     <ScrollView>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-banner" />
       <Overview
-        title={strings[language].tooltips.overview}
-        callToAction={strings[language].tooltips.callToAction}
+        title={strings[language].embeds.overview}
+        callToAction={strings[language].embeds.callToAction}
         testID="embeds-trigger-button"
         onPress={() => {
           AppcuesWrapper.track('show-embed');
         }}
       />
       <Text style={styles.useCases} testID="embeds-use-cases-header">
-        Use Cases
+        {strings[language].patterns.useCases}
       </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-use-cases" />
     </ScrollView>

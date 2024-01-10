@@ -12,6 +12,7 @@
     "more": "Plus"
   },
   "patterns": {
+    "useCases": "Cas d'utilisation",
     "list": {
       "modals": {
         "title": "Modals",

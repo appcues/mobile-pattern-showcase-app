@@ -19,7 +19,7 @@ export default function Modals() {
         }}
       />
       <Text style={styles.useCases} testID="modals-use-cases-header">
-        Use Cases
+        {strings[language].patterns.useCases}
       </Text>
       <AppcuesWrapper.WrappedAppcuesFrameView frameID="modals-use-cases" />
     </ScrollView>
