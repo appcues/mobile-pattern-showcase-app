@@ -32,25 +32,7 @@
       "infoPlist": {
         "CFBundleDisplayName": "Appcues",
         "CFBundleAllowMixedLocalizations": true,
-        "AppcuesUniversalLinkHostAllowList": [],
-        "UIAppFonts": [
-          "Mulish-Black.ttf",
-          "Mulish-ExtraBold.ttf",
-          "Mulish-Bold.ttf",
-          "Mulish-SemiBold.ttf",
-          "Mulish-Medium.ttf",
-          "Mulish-Regular.ttf",
-          "Mulish-Light.ttf",
-          "Mulish-ExtraLight.ttf",
-          "Mulish-BlackItalic.ttf",
-          "Mulish-ExtraBoldItalic.ttf",
-          "Mulish-BoldItalic.ttf",
-          "Mulish-SemiBoldItalic.ttf",
-          "Mulish-MediumItalic.ttf",
-          "Mulish-Italic.ttf",
-          "Mulish-LightItalic.ttf",
-          "Mulish-ExtraLightItalic.ttf"
-        ]
+        "AppcuesUniversalLinkHostAllowList": []
       }
     },
     "android": {
@@ -67,7 +49,30 @@
     },
     "plugins": [
       "expo-router",
-      "expo-localization"
+      "expo-localization",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Mulish-Black.ttf",
+            "./assets/fonts/Mulish-ExtraBold.ttf",
+            "./assets/fonts/Mulish-Bold.ttf",
+            "./assets/fonts/Mulish-SemiBold.ttf",
+            "./assets/fonts/Mulish-Medium.ttf",
+            "./assets/fonts/Mulish-Regular.ttf",
+            "./assets/fonts/Mulish-Light.ttf",
+            "./assets/fonts/Mulish-ExtraLight.ttf",
+            "./assets/fonts/Mulish-BlackItalic.ttf",
+            "./assets/fonts/Mulish-ExtraBoldItalic.ttf",
+            "./assets/fonts/Mulish-BoldItalic.ttf",
+            "./assets/fonts/Mulish-SemiBoldItalic.ttf",
+            "./assets/fonts/Mulish-MediumItalic.ttf",
+            "./assets/fonts/Mulish-Italic.ttf",
+            "./assets/fonts/Mulish-LightItalic.ttf",
+            "./assets/fonts/Mulish-ExtraLightItalic.ttf"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -9,7 +9,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "eas-build-post-install": "./configure-app-fonts.sh"
+    "eas-build-post-install": "./set-app-name.sh"
   },
   "jest": {
     "preset": "jest-expo"
