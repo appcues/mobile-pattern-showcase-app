@@ -48,11 +48,7 @@ export default function Examples() {
           title={strings[language].more.debuggerButton}
         />
       </View>
-      <View
-        style={styles.card}
-        level="secondaryBackground"
-        testID="debugger-card"
-      >
+      <View style={styles.card} level="secondaryBackground" testID="demo-card">
         <Text>{strings[language].more.demo}</Text>
         <PrimaryButton
           onPress={() => {
