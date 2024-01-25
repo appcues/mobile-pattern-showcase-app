@@ -30,7 +30,6 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
-        "CFBundleDisplayName": "Appcues",
         "CFBundleAllowMixedLocalizations": true,
         "AppcuesUniversalLinkHostAllowList": []
       }
@@ -46,6 +45,12 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
+    },
+    "locales": {
+      "en": "./languages/info-en.json",
+      "fr": "./languages/info-fr.json",
+      "pt": "./languages/info-pt.json",
+      "es": "./languages/info-es.json"
     },
     "plugins": [
       "expo-router",
