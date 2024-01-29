@@ -6,17 +6,23 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../../../components/Themed';
 
 export default function PreviewDetail() {
-  const { preview } = useLocalSearchParams<{ preview: string[] }>();
+  const { preview, locale_id } = useLocalSearchParams<{
+    preview: string[];
+    locale_id: string;
+  }>();
 
   const [status, setStatus] = useState<string>('Loading');
 
   useEffect(() => {
     if (preview?.length === 3) {
-      previewAppcuesExperience(preview[0], preview[1], preview[2]).then(
-        (result) => {
-          setStatus(result ? 'Loaded' : 'Error');
-        }
-      );
+      previewAppcuesExperience(
+        preview[0],
+        preview[1],
+        preview[2],
+        locale_id
+      ).then((result) => {
+        setStatus(result ? 'Loaded' : 'Error');
+      });
     } else {
       setStatus('Bad link');
     }

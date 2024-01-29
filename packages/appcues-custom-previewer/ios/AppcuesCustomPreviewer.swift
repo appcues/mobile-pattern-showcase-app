@@ -4,11 +4,12 @@ import AppcuesKit
 class AppcuesCustomPreviewer: NSObject {
     private var previewInstance: Appcues?
 
-    @objc(preview:applicationID:experienceID:withResolver:withRejecter:)
+    @objc(preview:applicationID:experienceID:localeID:withResolver:withRejecter:)
     func preview(
         accountID: String,
         applicationID: String,
         experienceID: String,
+        localeID: String? = nil,
         resolve:RCTPromiseResolveBlock,
         reject:RCTPromiseRejectBlock
     ) -> Void {
@@ -19,7 +20,9 @@ class AppcuesCustomPreviewer: NSObject {
             return
         }
 
-        guard let previewURL = URL(string: "appcues-\(applicationID)://sdk/experience_preview/\(experienceID)") else {
+        let localeParam = localeID.flatMap { "?locale_id=\($0)" } ?? ""
+
+        guard let previewURL = URL(string: "appcues-\(applicationID)://sdk/experience_preview/\(experienceID)\(localeParam)") else {
             reject("Preview Failure", "Could not create preview URL", nil)
             return
         }
