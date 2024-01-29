@@ -1,5 +1,5 @@
+import { Href, Link } from 'expo-router';
 import {
-  GestureResponderEvent,
   Image,
   ImageSourcePropType,
   StyleSheet,
@@ -15,28 +15,29 @@ type PatternCardProps = {
   image: ImageSourcePropType;
   title: string;
   subtitle: string;
+  href: Href<string>;
   style?: ViewStyle;
-  onPress?: ((event: GestureResponderEvent) => void) | undefined;
   testID?: string;
 };
 
 export default function PatternCard(props: PatternCardProps) {
   return (
-    <TouchableHighlight
-      style={{ ...styles.container, ...props.style }}
-      onPress={props.onPress}
-      testID={props.testID}
-    >
-      <ThemedView style={styles.inner} level="secondaryBackground">
-        <Image source={props.image} style={styles.image} />
-        <View style={styles.detail}>
-          <Text style={styles.title}>{props.title}</Text>
-          <Text style={styles.subtitle} level="tertiaryForeground">
-            {props.subtitle}
-          </Text>
-        </View>
-      </ThemedView>
-    </TouchableHighlight>
+    <Link href={props.href} asChild>
+      <TouchableHighlight
+        style={{ ...styles.container, ...props.style }}
+        testID={props.testID}
+      >
+        <ThemedView style={styles.inner} level="secondaryBackground">
+          <Image source={props.image} style={styles.image} />
+          <View style={styles.detail}>
+            <Text style={styles.title}>{props.title}</Text>
+            <Text style={styles.subtitle} level="tertiaryForeground">
+              {props.subtitle}
+            </Text>
+          </View>
+        </ThemedView>
+      </TouchableHighlight>
+    </Link>
   );
 }
 
