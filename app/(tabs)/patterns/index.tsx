@@ -1,4 +1,3 @@
-import { router } from 'expo-router';
 import { FlatList, ImageSourcePropType, StyleSheet } from 'react-native';
 
 import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
@@ -35,7 +34,7 @@ export default function Patterns() {
         image={item.image}
         title={strings[language].patterns.list[item.slug].title}
         subtitle={strings[language].patterns.list[item.slug].subtitle}
-        onPress={() => router.push(`/patterns/${item.slug}`)}
+        href={`/patterns/${item.slug}`}
         testID={`${item.slug}-card`}
         style={{
           marginBottom: 20,
