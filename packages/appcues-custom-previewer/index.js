@@ -16,7 +16,13 @@ const AppcuesCustomPreviewer = NativeModules.AppcuesCustomPreviewer
 export function previewAppcuesExperience(
   accountID,
   applicationID,
-  experienceID
+  experienceID,
+  localeID
 ) {
-  return AppcuesCustomPreviewer.preview(accountID, applicationID, experienceID);
+  return AppcuesCustomPreviewer.preview(
+    accountID,
+    applicationID,
+    experienceID,
+    localeID
+  );
 }

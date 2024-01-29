@@ -16,7 +16,7 @@ class AppcuesCustomPreviewerModule(reactContext: ReactApplicationContext) :
   }
 
   @ReactMethod
-  fun preview(accountID: String, applicationID: String, experienceID: String, promise: Promise) {
+  fun preview(accountID: String, applicationID: String, experienceID: String, localeID: String?, promise: Promise) {
     val context = reactApplicationContextIfActiveOrWarn
     if (context == null) {
       promise.reject("Preview Failure", "Unable to initialize the SDK, no Application Context found")
@@ -26,7 +26,10 @@ class AppcuesCustomPreviewerModule(reactContext: ReactApplicationContext) :
     val previewInstance = Appcues(context, accountID, applicationID)
 
     val activity = currentActivity
-    val deepLink = "appcues-$applicationID://sdk/experience_preview/$experienceID"
+
+    val localeParam = localeID?.let { "?locale_id=$it" } ?: ""
+
+    val deepLink = "appcues-$applicationID://sdk/experience_preview/$experienceID$localeParam"
     val uri = Uri.parse(deepLink)
     if (activity != null) {
         val intent = Intent(Intent.ACTION_VIEW)
