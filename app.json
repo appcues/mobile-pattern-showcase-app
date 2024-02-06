@@ -48,7 +48,9 @@
     },
     "locales": {
       "en": "./languages/info-en.json",
+      "ar": "./languages/info-ar.json",
       "fr": "./languages/info-fr.json",
+      "he": "./languages/info-he.json",
       "pt": "./languages/info-pt.json",
       "es": "./languages/info-es.json"
     },
@@ -83,6 +85,7 @@
       "typedRoutes": true
     },
     "extra": {
+      "supportsRTL": true,
       "router": {
         "origin": false
       },
