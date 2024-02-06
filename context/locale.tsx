@@ -1,14 +1,18 @@
 import * as Localization from 'expo-localization';
 import React, { PropsWithChildren } from 'react';
 
+import arStrings from '../languages/arabic.json';
 import enStrings from '../languages/english.json';
 import frStrings from '../languages/french.json';
+import heStrings from '../languages/hebrew.json';
 import ptStrings from '../languages/portugese.json';
 import esStrings from '../languages/spanish.json';
 
 const strings = {
   en: enStrings,
+  ar: arStrings,
   fr: frStrings,
+  he: heStrings,
   pt: ptStrings,
   es: esStrings,
 };
