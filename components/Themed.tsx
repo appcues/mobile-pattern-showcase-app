@@ -38,7 +38,10 @@ export function Text(props: TextProps) {
 
   return (
     <DefaultText
-      style={[{ color, fontFamily: 'Mulish-Regular' }, style]}
+      style={[
+        { color, fontFamily: 'Mulish-Regular', textAlign: 'left' },
+        style,
+      ]}
       {...otherProps}
     />
   );
