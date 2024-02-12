@@ -57,6 +57,7 @@
     "plugins": [
       "expo-router",
       "expo-localization",
+      "./rtl-plugin",
       [
         "expo-font",
         {
