@@ -3,7 +3,7 @@
     "name": "Showcase",
     "slug": "appcues-mobile-showcase",
     "owner": "appcues",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
     "scheme": [
