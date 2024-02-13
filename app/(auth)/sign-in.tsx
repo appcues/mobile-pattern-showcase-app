@@ -56,6 +56,7 @@ export default function SignIn() {
       <Waves scale={0.5} style={styles.waves} />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.formWrapper}
       >
         <View style={styles.formContainer}>
           <Rays scale={0.33} style={styles.rays} />
@@ -124,13 +125,15 @@ const styles = StyleSheet.create({
     right: -20,
     transform: [{ rotate: '22deg' }],
   },
+  formWrapper: {
+    flexDirection: 'row',
+  },
   formContainer: {
-    marginHorizontal: 20,
+    flex: 1,
+    maxWidth: 400,
+    marginHorizontal: 30,
   },
   contentBox: {
-    alignSelf: 'stretch',
-    maxWidth: 400,
-    alignItems: 'stretch',
     justifyContent: 'center',
     gap: 20,
     padding: 42,
