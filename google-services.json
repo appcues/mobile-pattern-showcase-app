@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678911151228",
+    "project_id": "showcase-mobile-95d0c",
+    "storage_bucket": "showcase-mobile-95d0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678911151228:android:79eadbcb352041c14f8df9",
+        "android_client_info": {
+          "package_name": "com.appcues.mobileshowcase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "GOOGLE_SERVICES_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
