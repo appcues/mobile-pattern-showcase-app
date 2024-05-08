@@ -39,6 +39,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundImage": "./assets/images/adaptive-icon-background.png"
       },
+      "googleServicesFile": "./google-services.json",
       "package": "com.appcues.mobileshowcase"
     },
     "web": {
@@ -55,6 +56,7 @@
       "es": "./languages/info-es.json"
     },
     "plugins": [
+      "@appcues/expo-config",
       "expo-router",
       "expo-localization",
       "./rtl-plugin",
