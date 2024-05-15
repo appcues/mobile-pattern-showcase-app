@@ -1,4 +1,5 @@
-import { router, useSegments } from 'expo-router';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { SplashScreen, router, useSegments } from 'expo-router';
 import React, { PropsWithChildren } from 'react';
 
 import * as AppcuesWrapper from '../components/AppcuesWrapper';
@@ -40,6 +41,34 @@ function useProtectedRoute(email: string | null) {
 
 export function AuthProvider(props: PropsWithChildren) {
   const [email, setAuth] = React.useState<string | null>(null);
+  const {
+    getItem: getEmail,
+    setItem: setEmail,
+    removeItem: removeEmail,
+  } = useAsyncStorage('@email_key');
+
+  const getSavedEmail = async () => {
+    const savedEmail = await getEmail();
+    await saveEmail(savedEmail);
+
+    SplashScreen.hideAsync();
+  };
+
+  const saveEmail = async (newValue: string | null) => {
+    setAuth(newValue);
+
+    if (newValue !== null) {
+      AppcuesWrapper.identify(newValue);
+      await setEmail(newValue);
+    } else {
+      AppcuesWrapper.reset();
+      removeEmail();
+    }
+  };
+
+  React.useEffect(() => {
+    getSavedEmail();
+  }, []);
 
   useProtectedRoute(email);
 
@@ -47,12 +76,10 @@ export function AuthProvider(props: PropsWithChildren) {
     <AuthContext.Provider
       value={{
         signIn: (email: string) => {
-          AppcuesWrapper.identify(email);
-          setAuth(email);
+          saveEmail(email);
         },
         signOut: () => {
-          AppcuesWrapper.reset();
-          setAuth(null);
+          saveEmail(null);
         },
         email,
       }}
