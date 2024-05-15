@@ -18,6 +18,8 @@ A development build update is needed for any changes to the native runtime.
 
 #### Android
 
+> NOTE: Ensure the proper value for the `google_services.json` `api_key` is set before triggering a build.
+
 ```sh
 $ eas build --profile development --platform android
 ```
@@ -59,6 +61,8 @@ $ npm run start
 ## Releasing
 
 ### Android
+
+> NOTE: Ensure the proper value for the `google_services.json` `api_key` is set before triggering a build.
 
 ```sh
 eas build --platform android
