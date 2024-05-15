@@ -12,7 +12,7 @@ import {
   useGlobalSearchParams,
   usePathname,
 } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
 import * as AppcuesWrapper from '../components/AppcuesWrapper';
@@ -30,6 +30,7 @@ export const unstable_settings = {
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
+// Splash screen is hidden in the AuthProvider once the state there is determined.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -39,11 +40,7 @@ export default function RootLayout() {
 
   const url = Linking.useURL();
 
-  // Ensures that first _real_ render of the app doesn't occur until
-  // SDK init complete - to avoid screen view analytics before SDK is ready
-  const [initComplete, setInitComplete] = useState(false);
-
-  const [loaded, error] = useFonts({
+  const [, error] = useFonts({
     ...FontAwesome.font,
   });
 
@@ -53,18 +50,11 @@ export default function RootLayout() {
   }, [error]);
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  useEffect(() => {
     const initializeSdk = async () => {
       await AppcuesWrapper.setup(
         '98227',
         '16daf46b-3231-4e4a-bb3c-273a4e9100dd'
       );
-      setInitComplete(true);
     };
     initializeSdk();
   }, []);
@@ -85,10 +75,6 @@ export default function RootLayout() {
       }
     });
   }, [url]);
-
-  if (!loaded || !initComplete) {
-    return null;
-  }
 
   return <RootLayoutNav />;
 }
