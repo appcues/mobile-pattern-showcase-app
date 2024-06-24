@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@appcues/expo-config": "^4.0.0-alpha.5",
-    "@appcues/react-native": "^4.0.0-alpha.1",
+    "@appcues/react-native": "^4.0.0-alpha.3",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
     "appcues-custom-previewer": "./packages/appcues-custom-previewer",
