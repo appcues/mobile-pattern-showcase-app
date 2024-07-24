@@ -58,6 +58,10 @@ export function AuthProvider(props: PropsWithChildren) {
 
     if (newValue !== null) {
       Appcues.identify(newValue);
+      const domain = newValue.split('@')[1];
+      if (domain !== undefined) {
+        Appcues.group(domain);
+      }
       await setEmail(newValue);
     } else {
       Appcues.reset();
