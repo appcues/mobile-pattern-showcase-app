@@ -1,6 +1,6 @@
+import * as Appcues from '@appcues/react-native';
 import { StyleSheet } from 'react-native';
 
-import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
 import { useLocale } from '../../../context/locale';
@@ -15,13 +15,13 @@ export default function Tooltips() {
         callToAction={strings[language].tooltips.callToAction}
         testID="tooltips-trigger-button"
         onPress={() => {
-          AppcuesWrapper.track('show-tooltip');
+          Appcues.track('show-tooltip');
         }}
       />
       <Text style={styles.useCases} testID="tooltips-use-cases-header">
         {strings[language].patterns.useCases}
       </Text>
-      <AppcuesWrapper.WrappedAppcuesFrameView frameID="tooltips-use-cases" />
+      <Appcues.AppcuesFrameView frameID="tooltips-use-cases" />
     </ScrollView>
   );
 }

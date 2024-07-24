@@ -1,6 +1,6 @@
+import { AppcuesFrameView } from '@appcues/react-native';
 import { useLocalSearchParams } from 'expo-router';
 
-import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
 import { ScrollView } from '../../../components/Themed';
 
 export default function ExampleDetail() {
@@ -8,7 +8,7 @@ export default function ExampleDetail() {
 
   return (
     <ScrollView>
-      <WrappedAppcuesFrameView frameID={id} />
+      <AppcuesFrameView frameID={id} />
     </ScrollView>
   );
 }
