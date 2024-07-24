@@ -1,3 +1,4 @@
+import * as Appcues from '@appcues/react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import {
   DarkTheme,
@@ -15,7 +16,6 @@ import {
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
-import * as AppcuesWrapper from '../components/AppcuesWrapper';
 import { AuthProvider } from '../context/auth';
 import { LocaleProvider } from '../context/locale';
 
@@ -51,16 +51,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     const initializeSdk = async () => {
-      await AppcuesWrapper.setup(
-        '98227',
-        '16daf46b-3231-4e4a-bb3c-273a4e9100dd'
-      );
+      await Appcues.setup('98227', '16daf46b-3231-4e4a-bb3c-273a4e9100dd');
     };
     initializeSdk();
   }, []);
 
   useEffect(() => {
-    AppcuesWrapper.screen(pathname);
+    Appcues.screen(pathname);
   }, [pathname, params]);
 
   useEffect(() => {
@@ -68,7 +65,7 @@ export default function RootLayout() {
       return;
     }
 
-    AppcuesWrapper.didHandleURL(url).then((appcuesDidHandleURL) => {
+    Appcues.didHandleURL(url).then((appcuesDidHandleURL) => {
       if (!appcuesDidHandleURL) {
         // Handle a non-Appcues URL
         console.log(url);

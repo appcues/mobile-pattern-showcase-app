@@ -1,6 +1,6 @@
+import { AppcuesFrameView } from '@appcues/react-native';
 import { FlatList, ImageSourcePropType, StyleSheet } from 'react-native';
 
-import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
 import PatternCard from '../../../components/PatternCard';
 import { View } from '../../../components/Themed';
 import { useLocale } from '../../../context/locale';
@@ -46,7 +46,7 @@ export default function Patterns() {
 
   return (
     <View style={styles.container}>
-      <WrappedAppcuesFrameView frameID="patterns-root" />
+      <AppcuesFrameView frameID="patterns-root" />
       <FlatList
         data={DATA}
         renderItem={renderItem}

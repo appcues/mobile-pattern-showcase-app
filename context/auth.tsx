@@ -1,8 +1,7 @@
+import * as Appcues from '@appcues/react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { SplashScreen, router, useSegments } from 'expo-router';
 import React, { PropsWithChildren } from 'react';
-
-import * as AppcuesWrapper from '../components/AppcuesWrapper';
 
 // https://docs.expo.dev/router/reference/authentication/
 
@@ -58,10 +57,10 @@ export function AuthProvider(props: PropsWithChildren) {
     setAuth(newValue);
 
     if (newValue !== null) {
-      AppcuesWrapper.identify(newValue);
+      Appcues.identify(newValue);
       await setEmail(newValue);
     } else {
-      AppcuesWrapper.reset();
+      Appcues.reset();
       removeEmail();
     }
   };

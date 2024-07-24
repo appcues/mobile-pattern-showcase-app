@@ -1,10 +1,9 @@
+import * as Appcues from '@appcues/react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import * as Linking from 'expo-linking';
 import { Link } from 'expo-router';
 import { View as PlainView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
-import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import PrimaryButton from '../../../components/PrimaryButton';
 import { ScrollView, Text, View } from '../../../components/Themed';
 import { shadow } from '../../../constants/Brand';
@@ -19,7 +18,7 @@ export default function Examples() {
 
   return (
     <ScrollView>
-      <WrappedAppcuesFrameView frameID="more-root" />
+      <Appcues.AppcuesFrameView frameID="more-root" />
       <View
         style={styles.card}
         level="secondaryBackground"
@@ -43,7 +42,7 @@ export default function Examples() {
         <Text>{strings[language].more.debugger}</Text>
         <PrimaryButton
           onPress={() => {
-            AppcuesWrapper.debug();
+            Appcues.debug();
           }}
           title={strings[language].more.debuggerButton}
         />
