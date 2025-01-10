@@ -37,7 +37,7 @@ export default function TabLayout() {
           headerShown: false,
           title: strings[language].tabs.patterns,
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
-          tabBarTestID: 'patterns-tab',
+          tabBarButtonTestID: 'patterns-tab',
         }}
       />
       <Tabs.Screen
@@ -46,7 +46,7 @@ export default function TabLayout() {
           headerShown: false,
           title: strings[language].tabs.examples,
           tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
-          tabBarTestID: 'examples-tab',
+          tabBarButtonTestID: 'examples-tab',
         }}
       />
       <Tabs.Screen
@@ -55,7 +55,7 @@ export default function TabLayout() {
           headerShown: false,
           title: strings[language].tabs.preview,
           tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} />,
-          tabBarTestID: 'preview-tab',
+          tabBarButtonTestID: 'preview-tab',
         }}
       />
       <Tabs.Screen
@@ -66,7 +66,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ellipsis-h" color={color} />
           ),
-          tabBarTestID: 'more-tab',
+          tabBarButtonTestID: 'more-tab',
         }}
       />
     </Tabs>
