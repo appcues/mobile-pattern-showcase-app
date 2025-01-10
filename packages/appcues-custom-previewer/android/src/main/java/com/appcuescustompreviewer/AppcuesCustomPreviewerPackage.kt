@@ -1,17 +1,31 @@
 package com.appcuescustompreviewer
 
-import com.facebook.react.ReactPackage
+import com.facebook.react.TurboReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ViewManager
+import com.facebook.react.module.model.ReactModuleInfo
+import com.facebook.react.module.model.ReactModuleInfoProvider
 
+class AppcuesCustomPreviewerPackage : TurboReactPackage() {
 
-class AppcuesCustomPreviewerPackage : ReactPackage {
-  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-    return listOf(AppcuesCustomPreviewerModule(reactContext))
+  override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
+    return if (name == AppcuesCustomPreviewerModule.NAME) {
+      AppcuesCustomPreviewerModule(reactContext)
+    } else {
+      null
+    }
   }
 
-  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-    return emptyList()
+  override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
+    mapOf(
+      AppcuesCustomPreviewerModule.NAME to ReactModuleInfo(
+        _name = AppcuesCustomPreviewerModule.NAME,
+        _className = AppcuesCustomPreviewerModule.NAME,
+        _canOverrideExistingModule = false,
+        _needsEagerInit = false,
+        isCxxModule = false,
+        isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+      )
+    )
   }
 }

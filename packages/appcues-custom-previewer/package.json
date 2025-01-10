@@ -5,5 +5,13 @@
   "main": "index.js",
   "author": "Appcues <mobile@appcues.com> (https://www.appcues.com)",
   "license": "MIT",
-  "homepage": "https://github.com/appcues/mobile-pattern-showcase-app#readme"
+  "homepage": "https://github.com/appcues/mobile-pattern-showcase-app#readme",
+  "codegenConfig": {
+    "name": "AppcuesCustomPreviewerSpec",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.appcuescustompreviewer"
+    }
+  }
 }
