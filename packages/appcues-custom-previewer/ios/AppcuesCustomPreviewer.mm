@@ -1,6 +1,11 @@
 #import <React/RCTBridgeModule.h>
 
+#ifdef RCT_NEW_ARCH_ENABLED
+#import <AppcuesCustomPreviewerSpec/AppcuesCustomPreviewerSpec.h>
+@interface RCT_EXTERN_MODULE(AppcuesCustomPreviewer, NativeAppcuesCustomPreviewerSpecBase)
+#else
 @interface RCT_EXTERN_MODULE(AppcuesCustomPreviewer, NSObject)
+#endif
 
 RCT_EXTERN_METHOD(preview:(NSString)accountID
                   applicationID:(NSString)applicationID
@@ -9,9 +14,12 @@ RCT_EXTERN_METHOD(preview:(NSString)accountID
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-+ (BOOL)requiresMainQueueSetup
+#ifdef RCT_NEW_ARCH_ENABLED
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+    (const facebook::react::ObjCTurboModule::InitParams &)params
 {
-  return NO;
+    return std::make_shared<facebook::react::NativeAppcuesCustomPreviewerSpecJSI>(params);
 }
+#endif
 
 @end
