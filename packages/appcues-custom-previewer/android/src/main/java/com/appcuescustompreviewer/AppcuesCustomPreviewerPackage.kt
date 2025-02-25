@@ -19,12 +19,12 @@ class AppcuesCustomPreviewerPackage : TurboReactPackage() {
   override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
     mapOf(
       AppcuesCustomPreviewerModule.NAME to ReactModuleInfo(
-        _name = AppcuesCustomPreviewerModule.NAME,
-        _className = AppcuesCustomPreviewerModule.NAME,
-        _canOverrideExistingModule = false,
-        _needsEagerInit = false,
-        isCxxModule = false,
-        isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+        AppcuesCustomPreviewerModule.NAME,
+        AppcuesCustomPreviewerModule.NAME,
+        false,
+        false,
+        false,
+        BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
       )
     )
   }
