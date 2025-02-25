@@ -1,6 +1,6 @@
+import * as Appcues from '@appcues/react-native';
 import { StyleSheet } from 'react-native';
 
-import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
 import { useLocale } from '../../../context/locale';
@@ -15,13 +15,13 @@ export default function Modals() {
         callToAction={strings[language].modals.callToAction}
         testID="modals-trigger-button"
         onPress={() => {
-          AppcuesWrapper.track('show-modal');
+          Appcues.track('show-modal');
         }}
       />
       <Text style={styles.useCases} testID="modals-use-cases-header">
         {strings[language].patterns.useCases}
       </Text>
-      <AppcuesWrapper.WrappedAppcuesFrameView frameID="modals-use-cases" />
+      <Appcues.AppcuesFrameView frameID="modals-use-cases" />
     </ScrollView>
   );
 }

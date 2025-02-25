@@ -1,7 +1,6 @@
+import * as Appcues from '@appcues/react-native';
 import { router, useSegments } from 'expo-router';
 import React, { PropsWithChildren } from 'react';
-
-import * as AppcuesWrapper from '../components/AppcuesWrapper';
 
 // https://docs.expo.dev/router/reference/authentication/
 
@@ -47,11 +46,11 @@ export function AuthProvider(props: PropsWithChildren) {
     <AuthContext.Provider
       value={{
         signIn: (email: string) => {
-          AppcuesWrapper.identify(email);
+          Appcues.identify(email);
           setAuth(email);
         },
         signOut: () => {
-          AppcuesWrapper.reset();
+          Appcues.reset();
           setAuth(null);
         },
         email,

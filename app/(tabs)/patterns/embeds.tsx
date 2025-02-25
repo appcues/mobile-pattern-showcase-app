@@ -1,6 +1,6 @@
+import * as Appcues from '@appcues/react-native';
 import { StyleSheet } from 'react-native';
 
-import * as AppcuesWrapper from '../../../components/AppcuesWrapper';
 import Overview from '../../../components/Overview';
 import { ScrollView, Text } from '../../../components/Themed';
 import { useLocale } from '../../../context/locale';
@@ -10,19 +10,19 @@ export default function Embeds() {
 
   return (
     <ScrollView>
-      <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-banner" />
+      <Appcues.AppcuesFrameView frameID="embeds-banner" />
       <Overview
         title={strings[language].embeds.overview}
         callToAction={strings[language].embeds.callToAction}
         testID="embeds-trigger-button"
         onPress={() => {
-          AppcuesWrapper.track('show-embed');
+          Appcues.track('show-embed');
         }}
       />
       <Text style={styles.useCases} testID="embeds-use-cases-header">
         {strings[language].patterns.useCases}
       </Text>
-      <AppcuesWrapper.WrappedAppcuesFrameView frameID="embeds-use-cases" />
+      <Appcues.AppcuesFrameView frameID="embeds-use-cases" />
     </ScrollView>
   );
 }

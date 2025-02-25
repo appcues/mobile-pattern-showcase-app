@@ -1,10 +1,11 @@
-import { WrappedAppcuesFrameView } from '../../../components/AppcuesWrapper';
+import * as Appcues from '@appcues/react-native';
+
 import { ScrollView } from '../../../components/Themed';
 
 export default function Examples() {
   return (
     <ScrollView>
-      <WrappedAppcuesFrameView frameID="examples-root" />
+      <Appcues.AppcuesFrameView frameID="examples-root" />
     </ScrollView>
   );
 }
