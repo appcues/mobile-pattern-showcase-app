@@ -1,6 +1,6 @@
-# React Native 0.74 (Expo 51) Debug Branch
+# React Native 0.75 (Expo 51) Debug Branch
 
-This branch is a snapshot of a React Native 0.74 app using Expo 51.
+This branch is a snapshot of a React Native 0.75 app using Expo 51.
 
 ## Setup
 
