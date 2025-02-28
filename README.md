@@ -10,11 +10,20 @@ $ npm install
 
 ## Run/Develop
 
-### Create a development build for emulator/simulator
+A development build update is needed for any changes to the native runtime.
+
+```sh
+$ npx expo prebuild --clean
+```
+
+### Using EAS
+<details>
+
+<summary>Details</summary>
+
+### Create a development build for emulator/simulator with EAS
 
 [Reference](https://docs.expo.dev/develop/development-builds/create-a-build/#create-a-build-for-emulatorsimulator)
-
-A development build update is needed for any changes to the native runtime.
 
 #### Android
 
@@ -34,7 +43,7 @@ $ eas build --profile development-simulator --platform ios
 
 After the build is complete, the CLI will prompt you to automatically download and install the it on the iOS Simulator. When prompted, press `Y` to directly install it on the simulator.
 
-### Download and install an existing development build
+### Download and install an existing development build from EAS
 
 If you're just running the app, you can download an existing development build:
 
@@ -51,6 +60,7 @@ If you're just running the app, you can download an existing development build:
 2. Look for the latest (eg top of the list) build with `Distribution  simulator`.
 3. Download the file listed as the corresponding `Artifact`.
 4. Unzip the downloaded file and drag the .ipa onto an iOS Simulator.
+</details>
 
 ### Run the development server
 
