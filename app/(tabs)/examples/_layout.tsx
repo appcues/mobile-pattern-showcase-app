@@ -3,6 +3,11 @@ import { Stack } from 'expo-router';
 import { useThemeColor } from '../../../components/Themed';
 import { useLocale } from '../../../context/locale';
 
+export const unstable_settings = {
+  // Ensure any route can link back to `/`
+  initialRouteName: 'index',
+};
+
 export default function ExamplesLayout() {
   const themedForegroundColor = useThemeColor('primaryForeground');
   const themedBackgroundColor = useThemeColor('tabBarBackground');
