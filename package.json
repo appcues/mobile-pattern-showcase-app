@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@appcues/expo-config": "^4.0.1",
-    "@appcues/react-native": "^4.4.0",
+    "@appcues/react-native": "^4.4.4",
     "@expo/vector-icons": "^14.1.0",
     "@react-native-async-storage/async-storage": "2.1.2",
     "@react-navigation/native": "^7.0.0",
