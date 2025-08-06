@@ -40,6 +40,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundImage": "./assets/images/adaptive-icon-background.png"
       },
+      "edgeToEdgeEnabled": true,
       "googleServicesFile": "./google-services.json",
       "package": "com.appcues.mobileshowcase"
     },
