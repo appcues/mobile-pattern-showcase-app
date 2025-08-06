@@ -8,15 +8,16 @@ import {
 import { useFonts } from 'expo-font';
 import * as Linking from 'expo-linking';
 import {
-  Slot,
   SplashScreen,
+  Stack,
   useGlobalSearchParams,
   usePathname,
 } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { AuthProvider } from '../context/auth';
+import { SplashScreenController } from '../components/splash';
+import { AuthProvider, useAuth } from '../context/auth';
 import { LocaleProvider } from '../context/locale';
 
 export {
@@ -37,6 +38,7 @@ export default function RootLayout() {
   // https://docs.expo.dev/router/reference/screen-tracking/
   const pathname = usePathname();
   const params = useGlobalSearchParams();
+  const colorScheme = useColorScheme();
 
   const url = Linking.useURL();
 
@@ -58,7 +60,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     Appcues.screen(pathname);
-  }, [pathname, params]);
+  }, [pathname]);
 
   useEffect(() => {
     if (url == null) {
@@ -73,19 +75,30 @@ export default function RootLayout() {
     });
   }, [url]);
 
-  return <RootLayoutNav />;
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <LocaleProvider>
         <AuthProvider>
-          <Slot />
+          <SplashScreenController />
+          <RootNavigator />
         </AuthProvider>
       </LocaleProvider>
     </ThemeProvider>
+  );
+}
+
+function RootNavigator() {
+  const { email } = useAuth();
+
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Protected guard={!email}>
+        <Stack.Screen name="index" />
+      </Stack.Protected>
+
+      <Stack.Protected guard={!!email}>
+        <Stack.Screen name="(tabs)" />
+      </Stack.Protected>
+    </Stack>
   );
 }

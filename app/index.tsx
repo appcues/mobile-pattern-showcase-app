@@ -1,4 +1,5 @@
 import { LinearGradient } from 'expo-linear-gradient';
+import { router } from 'expo-router';
 import { useState } from 'react';
 import {
   KeyboardAvoidingView,
@@ -8,14 +9,14 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import Logo from '../../assets/images/logo.svg';
-import { Rays, Waves } from '../../components/Decoration';
-import OutlinedTextInput from '../../components/OutlinedTextInput';
-import PrimaryButton from '../../components/PrimaryButton';
-import { Text } from '../../components/Themed';
-import { color, gradient, shadow } from '../../constants/Brand';
-import { useAuth } from '../../context/auth';
-import { useLocale } from '../../context/locale';
+import Logo from '../assets/images/logo.svg';
+import { Rays, Waves } from '../components/Decoration';
+import OutlinedTextInput from '../components/OutlinedTextInput';
+import PrimaryButton from '../components/PrimaryButton';
+import { Text } from '../components/Themed';
+import { color, gradient, shadow } from '../constants/Brand';
+import { useAuth } from '../context/auth';
+import { useLocale } from '../context/locale';
 
 export default function SignIn() {
   const colorScheme = useColorScheme();
@@ -32,6 +33,7 @@ export default function SignIn() {
   function submit(): void {
     if (isValid()) {
       signIn(emailAddress);
+      router.replace('/patterns');
     }
     setCanShowError(true);
   }

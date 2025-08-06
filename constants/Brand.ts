@@ -1,3 +1,5 @@
+import { ColorValue } from 'react-native';
+
 export const color = {
   neutral0: '#FFFFFF',
   neutral50: '#F7FAFF',
@@ -10,7 +12,10 @@ export const color = {
   burple600: '#5C5CFF',
 };
 
-export const gradient = {
+export const gradient: Record<
+  string,
+  [ColorValue, ColorValue, ...ColorValue[]]
+> = {
   blurpleHaze: ['#5C5CFF', '#8960FF'],
   moodLighting: ['#5C5CFF', '#8AD5FF'],
   galaxy: ['#5C5CFF', '#FF92C6'],
