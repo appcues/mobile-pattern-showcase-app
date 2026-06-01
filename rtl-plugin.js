@@ -1,4 +1,3 @@
-const Manifest = require('@expo/config-plugins/build/android/Manifest');
 const configPlugins = require('expo/config-plugins');
 
 // Sets `android:supportsRtl="true"` on the AndroidManifest `<application>`.
@@ -6,7 +5,7 @@ const configPlugins = require('expo/config-plugins');
 // And https://reactnative.dev/blog/2016/08/19/right-to-left-support-for-react-native-apps#making-an-app-rtl-ready
 exports.default = (config) =>
   configPlugins.withAndroidManifest(config, (config) => {
-    const mainApplication = Manifest.getMainApplicationOrThrow(
+    const mainApplication = configPlugins.AndroidConfig.Manifest.getMainApplicationOrThrow(
       config.modResults
     );
     mainApplication.$['android:supportsRtl'] = 'true';
