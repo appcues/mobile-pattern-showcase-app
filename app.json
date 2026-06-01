@@ -11,15 +11,6 @@
       "appcues-16daf46b-3231-4e4a-bb3c-273a4e9100dd"
     ],
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff",
-      "dark": {
-        "image": "./assets/images/splash-dark.png",
-        "backgroundColor": "#0B1A38"
-      }
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -83,7 +74,28 @@
           ]
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/images/splash-dark.png",
+            "backgroundColor": "#0B1A38"
+          }
+        }
+      ],
+      "expo-status-bar",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.4"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
