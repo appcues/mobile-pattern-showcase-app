@@ -10,7 +10,6 @@
       "appcues-showcase",
       "appcues-16daf46b-3231-4e4a-bb3c-273a4e9100dd"
     ],
-    "newArchEnabled": true,
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -40,7 +39,6 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundImage": "./assets/images/adaptive-icon-background.png"
       },
-      "edgeToEdgeEnabled": true,
       "googleServicesFile": "./google-services.json",
       "package": "com.appcues.mobileshowcase"
     },
@@ -84,7 +82,8 @@
             "./assets/fonts/Mulish-ExtraLightItalic.ttf"
           ]
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true
