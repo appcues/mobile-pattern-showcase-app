@@ -1,0 +1,9 @@
+{
+  "platforms": ["ios", "android"],
+  "ios": {
+    "modules": ["AppcuesCustomPreviewerModule"]
+  },
+  "android": {
+    "modules": ["com.appcuescustompreviewer.AppcuesCustomPreviewerModule"]
+  }
+}
