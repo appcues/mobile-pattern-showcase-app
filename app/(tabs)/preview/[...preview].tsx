@@ -1,9 +1,9 @@
-import { previewAppcuesExperience } from 'appcues-custom-previewer';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../../../components/Themed';
+import { previewAppcuesExperience } from '../../../modules/appcues-custom-previewer';
 
 export default function PreviewDetail() {
   const { preview, locale_id } = useLocalSearchParams<{
