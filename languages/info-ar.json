@@ -1,3 +1,5 @@
 {
-  "CFBundleDisplayName": "Appcues"
+  "ios": {
+    "CFBundleDisplayName": "Appcues"
+  }
 }
